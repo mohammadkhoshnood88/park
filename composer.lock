@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4731429c7f25ab92eaa813447a972209",
+    "content-hash": "24bdde3e3d13febd9e9a8cc2b29e36a5",
     "packages": [
+        {
+            "name": "astatroth/laravel-timer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Astatroth/laravel-timer.git",
+                "reference": "6925f26a5e81a9fc22edbbbb80d5c62ee3a5d3f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Astatroth/laravel-timer/zipball/6925f26a5e81a9fc22edbbbb80d5c62ee3a5d3f6",
+                "reference": "6925f26a5e81a9fc22edbbbb80d5c62ee3a5d3f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/",
+                    "Astatroth\\LaravelTimer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Astatroth",
+                    "email": "astatroth@gmail.com"
+                }
+            ],
+            "description": "A small tool to measure operations execution time.",
+            "time": "2018-08-13T07:20:32+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -4269,7 +4306,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "astatroth/laravel-timer": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

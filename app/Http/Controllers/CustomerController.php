@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Beacon;
 use App\customer;
 use App\Http\Resources\customerresource;
 use App\iot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
@@ -95,5 +97,16 @@ class CustomerController extends Controller
     public function destroy(customer $customer)
     {
         //
+    }
+
+    public function record(Request $request)
+    {
+        $record = DB::table('customers')
+            ->join('races', 'customers.mac_address', '=', 'races.mac_address')
+            ->select('races.*', 'customers.points')
+            ->get();
+
+        return $record->where('mac_address' , '=' , $request->mac_address);
+
     }
 }

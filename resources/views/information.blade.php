@@ -1,137 +1,129 @@
-<!-- /header content -->
 @extends('layout.main')
-<body class="nav-md">
-<div class="container body">
-    <div class="main_container">
-        <div class="col-md-3 left_col hidden-print">
-            <div class="left_col scroll-view">
-                <div class="navbar nav_title" style="border: 0;">
-                    <a href="{{'/'}}" class="site_title"><i class="fa fa-star-half-empty"></i> <span>تبلیغات هوشمند</span></a>
-                </div>
+@section('title')
+    ویرایش اطلاعات
+@endsection
 
-                <div class="clearfix"></div>
+@section('header')
+    <script src="{{asset('css/vendors/jquery/dist/jquery.min.js')}}"></script>
+    <script>
+        function append2() {
+            var nature = $("#nature").val();
+            $("#naturelist").val(function(i,origText){return origText + "+" +nature; });
+            var txt2 = $("<tr style='text-align: center;border-bottom: 1px solid #ddd'><td></td></tr>").text(nature);
+            $('#nattable tbody').after(txt2);
+            $("#nature").val("");
 
-                <!-- menu profile quick info -->
-                <div class="profile clearfix">
-                    <div class="profile_pic">
-                        <img src="../build/images/img.jpg" alt="..." class="img-circle profile_img">
-                    </div>
-                    <div class="profile_info">
-                        <h2>کاربر گرامی</h2>
-                        <span>خوش آمدید,</span>
-                    </div>
-                </div>
-                <!-- /menu profile quick info -->
+        }
+    </script>
+    <script>
+        function append1() {
+            var groups = $("#groups").val();
+            $("#groupslist").val(function(i,origText){return origText + "+" +groups; });
+            var txt1 = $("<tr style='padding: 10px;text-align: center;border-bottom: 1px solid #ddd'><td style='margin-bottom: 10px'></td></tr>").text(groups);
+            $('#grtable tbody').after(txt1);
+            $("#groups").val("");
+        }
+    </script>
+    <script>
+        function append3() {
+            var location = $("#location").val();
+            $("#locationlist").val(function(i,origText){return origText + "+" +location; });
+            var txt3 = $("<tr style='padding: 10px;text-align: center;border-bottom: 1px solid #ddd'><td style='margin-bottom: 10px'></td></tr>").text(location);
+            $('#loctable tbody').after(txt3);
+            $("#location").val("");
+        }
+    </script>
+    @endsection
 
-                <br/>
+@section('content')
 
-                <!-- sidebar menu -->
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                    <div class="menu_section">
-                        <h3>فهرست</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> اطلاعات پایه <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="{{'/api/information/create'}}">ورود</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-home"></i> مدیریت بیکن ها <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="{{'/api/beacon/create'}}">ایجاد بیکن</a></li>
-                                    <li><a href="#">اطلاعات کامل بیکن ها</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-home"></i> مدیریت نوتیفیکشن ها <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="{{'/api/notif/create'}}">ورود</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-bar-chart"></i> گزارشات <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="{{'/api/iot'}}">نمایش جدولی</a></li>
-                                    <li><a href="#">نمایش نموداری</a></li>
-                                </ul>
-                            </li><li><a><i class="fa fa-home"></i> حساب کاربری <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">پروفایل شخصی</a></li>
-                                    <li><a href="#">مشخصات فروشگاه</a></li>
-                                    <li><a href="#">خروج از پنل</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+        <!-- /page content -->
 
-                    </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-4 col-sm-3 col-xs-12" for="first-name">طبقه بندی :
 
-                </div>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" id="groups" name="groups"
+                                           class="form-control col-md-7 col-xs-12">
+                                </div>
+                                <button class="btn btn-primary" onclick="append1()"><span class="fa fa-plus"></span></button>
+                                <table id="grtable" style="margin: 5px" class="table table-striped table-bordered">
 
-            </div>
-        </div>
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h4>مدیریت اطلاعات پایه</h4>
-                    </div>
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center">طبقه بندی</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbody" style="padding: 10px;margin: 10px">
 
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="جست و جو برای...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">برو!</button>
-                    </span>
+                                    </tbody>
+
+                                </table>
+
+
                             </div>
-                        </div>
-                    </div>
-                </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-4 col-sm-3 col-xs-12" for="first-name">ماهیت  :
 
-            </div>
-            <!-- /page content -->
-            <div class="row">
-            <div class="container">
-                <div class="x_panel col-md-6">
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" id="nature" name="nature"
+                                           class="form-control col-md-7 col-xs-12">
+                                </div>
+                                <button class="btn btn-primary" onclick="append2()"><span class="fa fa-plus"></span></button>
+                                <table id="nattable" style="margin: 5px" class="table table-striped table-bordered">
+
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center">ماهیت</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-4 col-sm-3 col-xs-12" for="first-name">موقعیت :
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" id="location" name="location"
+                                           class="form-control col-md-7 col-xs-12">
+                                </div>
+                                <button class="btn btn-primary" onclick="append3()"><span class="fa fa-plus"></span></button>
+                                <table id="loctable" style="margin: 5px" class="table table-striped table-bordered">
+
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center">طبقه بندی</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody style="padding: 10px;margin: 10px;">
+
+                                    </tbody>
+
+                                </table>
+
+
+                            </div>
+
+                </div>
                     <form class="form-group" method="post" action="{{url('/api/information/set')}}">
-
-                        <div class="control-group col-md-6">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">طبقه بندی ها :</label>
-                            <div class="col-md-12 col-sm-9 col-xs-12">
-                                <input name="group" id="tags_1" type="text" class="tags form-control"
-                                       value="خوراک,پوشاک "/>
-                                <div id="suggestions-container"
-                                     style="position: relative; float: left; width: 250px; margin: 10px;"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">نام
-                                <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="first-name" required="required"
-                                       class="form-control col-md-7 col-xs-12">
-                            </div>
-                        </div>
-                        <button type="submit" >تایید</button>
+                        <input name="locationlist" type="hidden" id="locationlist">
+                        <input name="grouplist" type="hidden" id="grouplist">
+                        <input  name="naturelist" type="hidden" id="naturelist">
+                        <span>جهت ثبت اطلاعات ورودی ثبت اطلاعات را بزنید.</span>
+                        <button type="submit" class="btn btn-primary">ذخیره اطلاعات</button>
                     </form>
-            </div>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div id="lock_screen">
-        <table>
-            <tr>
-                <td>
-                    <div class="clock"></div>
-                    <span class="unlock">
-                    <span class="fa-stack fa-5x">
-                      <i class="fa fa-square-o fa-stack-2x fa-inverse"></i>
-                      <i id="icon_lock" class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                </span>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <!-- jQuery -->
-@extends('layout.footer')
+
+
+
+@endsection
+
+
+

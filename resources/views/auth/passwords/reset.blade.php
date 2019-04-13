@@ -1,13 +1,14 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layout.main')
+<body class="login">
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+    <h1 style="text-align: center;color: black;font: 50px">سامانه تبلیغات هوشمند</h1>
+    <h2 style="text-align: center;color: black;font: 50px">pacespace</h2>
+    <div class="login_wrapper">
+        <div class="col-md-12">
+            <div class="login_form">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
-                <div class="card-body">
+                <div class="login_content">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 
@@ -62,4 +63,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+@extends('layout.footer')

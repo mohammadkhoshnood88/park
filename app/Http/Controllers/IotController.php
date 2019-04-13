@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Beacon;
-use App\Notif;
 use App\Customer;
-use App\Http\Resources\iotresource;
 use App\iot;
+use App\Notif;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
-use Symfony\Component\Console\Input\InputOption;
-use function Symfony\Component\Console\Tests\Command\createClosure;
 
 class IotController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('web')->only('inform');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,18 +24,17 @@ class IotController extends Controller
      */
     public function index()
     {
-
         $beacon_iot = DB::table('iots')
             ->join('beacons', 'iots.beacon_mac', '=', 'beacons.mac_address')
             ->select('beacons.*', 'iots.count')
             ->get();
 
-        $iot = Iot::all();
+        $iot = Iot::paginate(30);
 
         $beacons = Beacon::all();
         $customer = Customer::all();
         $spiot = "";
-        return view('tables', compact('iot', 'beacons', 'customer' , 'beacon_iot' , 'spiot'));
+        return view('tables', compact('iot', 'beacons', 'customer', 'beacon_iot', 'spiot'));
     }
 
     /**
@@ -54,46 +55,32 @@ class IotController extends Controller
      */
     public function store(Request $request)
     {
+//return ;
         $customer = Customer::where('mac_address', $request->get('mac_address'))->first();
         if (!$customer) {
             $customers = new Customer();
-//            $customers->mac_address = $request->get('mac_address');
-             Customer::create([
-                'mac_address' => $request->get('mac_address')
+            Customer::create([
+                'mac_address' => $request->get('mac_address'),
+                'name' => "name",
+                'telnum' => "telnum",
+                'getrace'=> "getrace",
+                'time'=>"time",
+                'points'=>"0"
             ]);
         }
 
-        $iots = Iot::where(['beacon_mac'=> $request->get('beacon_mac') , 'customer_id'=> $request->get('mac_address')])->first();
+        $iots = Iot::where(['beacon_mac' => $request->get('beacon_mac'), 'customer_id' => $request->get('mac_address')])->first();
         $beacon = Beacon::where('mac_address', $request->get('beacon_mac'))->first();
 
-        if ($beacon && !$iots) {
-            iot::create([
-                'customer_id' => $request->get('mac_address'),
-                'beacon_mac' => $request->get('beacon_mac'),
-                'beacon_id' => $request->get('uuid'),
-                'rssi' => $request->get('rssi'),
-                'count' => '1'
-            ]);
+        $iot = new Iot();
+        $iot->customer_id = $request->get('mac_address');
+        $iot->beacon_mac = $request->get('beacon_mac');
+        $iot->beacon_id = $request->get('uuid');
+        $iot->rssi = $request->get('rssi');
+        $iot->count = '1';
+        $iot->save();
 
-//            $iot = new Iot();
-//            $iot->customer_id =  $request->get('mac_address');
-//            $iot->beacon_mac = $request->get('beacon_mac');
-//            $iot->beacon_id = $request->get('uuid');
-//            $iot->rssi = $request->get('rssi');
-//            $iot->count = '1';
-//            $iot->save();
-
-        }
-        elseif ($beacon && $iots){
-
-            DB::table('iots')
-                ->where(['beacon_mac'=> $request->get('beacon_mac') , 'customer_id'=> $request->get('mac_address')])
-                ->increment('count');
-            DB::table('iots')
-                ->where(['beacon_mac'=> $request->get('beacon_mac') , 'customer_id'=> $request->get('mac_address')])
-                ->update(['rssi' => $request->get('rssi')]);
-        }
-        return "hello" . $request->get('beacon_mac');
+        return response()->json("hello" . $request->get('beacon_mac'));
 
     }
 
@@ -149,27 +136,73 @@ class IotController extends Controller
      */
     public function notif()
     {
-        $beacons = DB::table('notifs')
-            ->join('beacons', 'notifs.uuid', '=', 'beacons.uuid')
-            ->select('beacons.*', 'notifs.*')
-            ->get();
-$beacons = Beacon::all();
+        $notifs = Notif::all();
+        return view('notif', compact('notifs'));
+    }
 
-        return view('notif' , compact('beacons'));
+    public function editnotif($notif, Request $request)
+    {
+
+        $notifs = Notif::where('uuid', $notif)->first();
+
+        return view('editnotif', compact('notifs'));
+    }
+
+    public function updatenotif(Request $request)
+    {
+
+        if ($request->txt != "") {
+            DB::table('notifs')
+                ->where(['uuid' => $request->uuid])
+                ->update(['txt' => $request->get('txt')]);
+        }
+        if ($request->pic != "") {
+            DB::table('notifs')
+                ->where(['uuid' => $request->uuid])
+                ->update(['pic' => $request->get('pic')]);
+        }
+        if ($request->vid != "") {
+            DB::table('notifs')
+                ->where(['uuid' => $request->uuid])
+                ->update(['vid' => $request->get('vid')]);
+        }
+        if ($request->url != "") {
+            DB::table('notifs')
+                ->where(['uuid' => $request->uuid])
+                ->update(['url' => $request->get('url')]);
+        }
+        if ($request->dis != "") {
+            DB::table('notifs')
+                ->where(['uuid' => $request->uuid])
+                ->update(['dis' => $request->get('dis')]);
+        }
+
+        return redirect('api/notif/create');
     }
 
     public function inform()
     {
-        return view('information');
+        $beacons = Beacon::all();
+//        return $beacons;
+        return view('information', compact('beacons'));
     }
 
     public function setinform(Request $request)
     {
 
-    }
+        $location=$request->locationlist;
+        $location = substr($location,1);
+        $location = explode("+",$location);
 
-    public function editnotif($notif,Request $request)
-    {
+        $nature = $request->naturelist;
+        $nature = substr($nature,1);
+        $nature = explode("+",$nature);
 
+        $group = $request->grouplist;
+        $group = substr($group,1);
+        $group = explode("+",$group);
+        $information = array();
+        $information = [$group , $nature , $location];
+        return $information;
     }
 }

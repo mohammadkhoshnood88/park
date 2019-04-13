@@ -17,7 +17,7 @@ class MustBeAdmin
     public function handle($request, Closure $next)
     {
         $user = $request->user();
-        if ($user && $user->id == 2) {
+        if ($user && $user->id == 1) {
             return $next($request);
         }
         abort(404, 'Access Denied !!!');

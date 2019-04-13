@@ -10,7 +10,7 @@ class Notif extends Model
       'uuid',
         'txt',
         'url',
-        'pic_name',
-        'pic_path'
+        'pic',
+        'vid'
     ];
 }

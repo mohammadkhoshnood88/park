@@ -16,12 +16,16 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::Resource('/iot','IotController')->middleware('admin');
+Route::Resource('/iot','IotController');
 Route::post('image/upload/store','CustomerController@store');
-Route::get('/notif/create' , 'IotController@notif');
-Route::get('/information/create' , 'IotController@inform');
-Route::Resource('/beacon','BeaconController');
-Route::get('/beacon/{beacon}' , 'BeaconController@destroy');
+
+Route::Resource('/beacon','BeaconController')->middleware('auth:api');
+Route::get('/beacon/{beacon}' , 'BeaconController@destroy')->middleware('auth');
 Route::post('/information/set' , 'IotController@setinform');
 Route::post('/iot/specialrecord' , 'BeaconController@record');
-Route::put('/api/notif/{notif}/edit' , 'IotController@editnotif');
+
+Route::post('/setshop' , 'BeaconController@setshop');
+Route::get('/getrace', 'BeaconController@getrace')->middleware('auth:api');
+Route::post('/startrace', 'BeaconController@startrace');
+Route::post('/cancelrace', 'BeaconController@cancelrace');
+Route::get('/record/points', 'CustomerController@record');
