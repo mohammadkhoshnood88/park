@@ -1,49 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bcaf153-4111-4821-a566-3ab3ed1d1989" name="Default Changelist" comment="a">
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/park.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/park.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="7bcaf153-4111-4821-a566-3ab3ed1d1989" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Race.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/race.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tables_dynamic.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BeaconController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BeaconController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IotController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/MustBeAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/MustBeAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Iot.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Iot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notif.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notif.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_01_105953_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_01_105953_create_customers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/build/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/build/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/build/css/custom.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/build/css/custom.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editnotif.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/information.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/notif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notif.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/setbeacon.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/setbeacon.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tables.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +57,7 @@
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.37" value="2" />
           <entry key="project.open.time.38" value="3" />
-          <entry key="project.open.time.39" value="4" />
+          <entry key="project.open.time.39" value="5" />
           <entry key="project.open.time.40" value="4" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.44" value="2" />
@@ -108,7 +73,7 @@
           <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.79" value="1" />
-          <entry key="project.opened" value="55" />
+          <entry key="project.opened" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -117,15 +82,15 @@
           <entry key="env" value="2" />
           <entry key="gitignore" value="2" />
           <entry key="less" value="1" />
-          <entry key="php" value="488" />
+          <entry key="php" value="515" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="167" />
+          <entry key="Blade" value="185" />
           <entry key="CSS" value="6" />
           <entry key="Less" value="1" />
-          <entry key="PHP" value="321" />
+          <entry key="PHP" value="330" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -134,16 +99,23 @@
           <entry key="dummy" value="16" />
           <entry key="env" value="9" />
           <entry key="gitignore" value="13" />
-          <entry key="php" value="39881" />
-          <entry key="txt" value="1" />
+          <entry key="php" value="39931" />
+          <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="16649" />
+          <entry key="Blade" value="16698" />
+          <entry key="CSS" value="1" />
           <entry key="HTML" value="2" />
           <entry key="PHP" value="23230" />
-          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="PLAIN_TEXT" value="66" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="3" />
+          <entry key="git.branch.merge" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -210,8 +182,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="110">
+              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+              <folding>
+                <element signature="e#1790#1810#0#HTML" expanded="true" />
+                <element signature="e#1900#1925#0#HTML" expanded="true" />
+                <element signature="e#2285#2305#0#HTML" expanded="true" />
+                <element signature="e#2400#2425#0#HTML" expanded="true" />
+                <element signature="e#2752#2772#0#HTML" expanded="true" />
+                <element signature="e#2851#2876#0#HTML" expanded="true" />
+                <element signature="e#3230#3250#0#HTML" expanded="true" />
+                <element signature="e#3329#3354#0#HTML" expanded="true" />
+                <element signature="e#3708#3728#0#HTML" expanded="true" />
+                <element signature="e#3807#3832#0#HTML" expanded="true" />
+                <element signature="e#4178#4198#0#HTML" expanded="true" />
+                <element signature="e#4322#4347#0#HTML" expanded="true" />
+                <element signature="e#4609#4629#0#HTML" expanded="true" />
+                <element signature="e#4708#4733#0#HTML" expanded="true" />
+                <element signature="e#5140#5161#0#HTML" expanded="true" />
+                <element signature="e#5199#5218#0#HTML" expanded="true" />
+                <element signature="e#5415#5435#0#HTML" expanded="true" />
+                <element signature="e#5552#5571#0#HTML" expanded="true" />
+                <element signature="e#5761#5781#0#HTML" expanded="true" />
+                <element signature="e#5898#5917#0#HTML" expanded="true" />
+                <element signature="e#6093#6113#0#HTML" expanded="true" />
+                <element signature="e#6230#6249#0#HTML" expanded="true" />
+                <element signature="e#6438#6458#0#HTML" expanded="true" />
+                <element signature="e#6575#6594#0#HTML" expanded="true" />
+                <element signature="e#6777#6797#0#HTML" expanded="true" />
+                <element signature="e#6914#6933#0#HTML" expanded="true" />
+                <element signature="e#7116#7136#0#HTML" expanded="true" />
+                <element signature="e#7254#7273#0#HTML" expanded="true" />
+                <element signature="e#7469#7489#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -263,7 +266,13 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="mamadbranch" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -603,16 +612,40 @@
       <workItem from="1555136606579" duration="1087000" />
       <workItem from="1555137753790" duration="7369000" />
       <workItem from="1555145625377" duration="562000" />
+      <workItem from="1555169259381" duration="1902000" />
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <created>1555169469402</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555169469403</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add123">
+      <created>1555170162559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555170162559</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add123">
+      <created>1555170191791</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555170191791</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="382396000" />
+    <option name="totallyTimeSpent" value="384298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.498062" visible="true" weight="0.2080537" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.498062" visible="true" weight="0.21073826" />
       <window_info id="Structure" order="1" sideWeight="0.501938" side_tool="true" weight="0.19731544" />
       <window_info id="Favorites" order="2" sideWeight="0.501938" side_tool="true" weight="0.19731544" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -621,11 +654,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.49731544" visible="true" weight="0.23404256" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.49731544" visible="true" weight="0.30780143" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.2567376" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5026846" side_tool="true" weight="0.5276596" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4986577" weight="0.2680851" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -638,12 +671,40 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <MESSAGE value="add" />
+    <MESSAGE value="add123" />
+    <option name="LAST_COMMIT_MESSAGE" value="add123" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env">
@@ -960,8 +1021,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="110">
+          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+          <folding>
+            <element signature="e#1790#1810#0#HTML" expanded="true" />
+            <element signature="e#1900#1925#0#HTML" expanded="true" />
+            <element signature="e#2285#2305#0#HTML" expanded="true" />
+            <element signature="e#2400#2425#0#HTML" expanded="true" />
+            <element signature="e#2752#2772#0#HTML" expanded="true" />
+            <element signature="e#2851#2876#0#HTML" expanded="true" />
+            <element signature="e#3230#3250#0#HTML" expanded="true" />
+            <element signature="e#3329#3354#0#HTML" expanded="true" />
+            <element signature="e#3708#3728#0#HTML" expanded="true" />
+            <element signature="e#3807#3832#0#HTML" expanded="true" />
+            <element signature="e#4178#4198#0#HTML" expanded="true" />
+            <element signature="e#4322#4347#0#HTML" expanded="true" />
+            <element signature="e#4609#4629#0#HTML" expanded="true" />
+            <element signature="e#4708#4733#0#HTML" expanded="true" />
+            <element signature="e#5140#5161#0#HTML" expanded="true" />
+            <element signature="e#5199#5218#0#HTML" expanded="true" />
+            <element signature="e#5415#5435#0#HTML" expanded="true" />
+            <element signature="e#5552#5571#0#HTML" expanded="true" />
+            <element signature="e#5761#5781#0#HTML" expanded="true" />
+            <element signature="e#5898#5917#0#HTML" expanded="true" />
+            <element signature="e#6093#6113#0#HTML" expanded="true" />
+            <element signature="e#6230#6249#0#HTML" expanded="true" />
+            <element signature="e#6438#6458#0#HTML" expanded="true" />
+            <element signature="e#6575#6594#0#HTML" expanded="true" />
+            <element signature="e#6777#6797#0#HTML" expanded="true" />
+            <element signature="e#6914#6933#0#HTML" expanded="true" />
+            <element signature="e#7116#7136#0#HTML" expanded="true" />
+            <element signature="e#7254#7273#0#HTML" expanded="true" />
+            <element signature="e#7469#7489#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
