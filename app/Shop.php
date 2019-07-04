@@ -8,17 +8,23 @@ class Shop extends Model
 {
     protected $fillable = [
         'name',
+        'user_id',
         'shop_name',
         'logo',
-        'add',
+        'address',
         'type',
-        'groups',
-        'race_title',
-        'race_desc',
-        'arr_time',
-        'number',
-        'st_time',
-        'fin_time',
-        'beacon_mac'
+        'tel_num',
+        'shop_name'
     ];
+
+    public function notif()
+    {
+        $notifs = DB::table('notifs')
+            ->where('notifs.uuid', $this->uuid)
+            ->select('notifs.*')
+            ->get();
+
+        return $notifs;
+    }
+
 }

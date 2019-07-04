@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col hidden-print">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="{{'/'}}" class="site_title"><i class="fa fa-star-half-empty"></i> <span>تبلیغات هوشمند</span></a>
+            <a href="{{'/'}}" class="site_title"><i class="fa fa-hand-o-left"></i> <span>PsPace</span></a>
         </div>
 
     {{--<div class="clearfix"></div>--}}
@@ -25,31 +25,39 @@
             <div class="menu_section">
                 <h3>فهرست</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-home"></i> اطلاعات پایه <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-pencil-square"></i> اطلاعات پایه <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{'/api/information/create'}}">ورود</a></li>
+                            <li><a href="{{route('information_create')}}">ورود</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-home"></i> مدیریت بیکن ها <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-bullseye"></i> مدیریت بیکن ها <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{'/api/beacon/create'}}">ورود</a></li>
+                            <li><a href="{{route('beacon_create')}}">ورود</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-home"></i> مدیریت نوتیفیکشن ها <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-rss"></i> مدیریت پیام ها <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{'/api/notif/create'}}">ورود</a></li>
+                            <li><a href="{{route('notif_create')}}">پیام های محیطی</a></li>
+                            <li><a href="{{route('message_create')}}">پیام های عمومی</a></li>
+                            <li><a href="{{route('qrcode_create')}}">پیام های qrcode</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-bar-chart"></i> گزارشات <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-bar-chart"></i> گزارش ها <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{'/api/iot'}}">نمایش جدولی</a></li>
+                            <li><a href="{{route('iot')}}">نمایش جدولی</a></li>
                             <li><a href="#">نمایش نموداری</a></li>
                         </ul>
-                    </li><li><a><i class="fa fa-home"></i> حساب کاربری <span class="fa fa-chevron-down"></span></a>
+                    </li>
+                    <li><a><i class="fa fa-gamepad"></i>مدیریت بازی ها <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">پروفایل شخصی</a></li>
-                            <li><a href="{{'/api/setshop'}}">ایجاد مسابقه</a></li>
-                            <li><a href="{{url('/logout')}}">خروج از پنل</a></li>
+                            <li><a href="{{route('shop_create')}}">ایجاد بازی جدید</a></li>
+                            <li><a href="#">وضعیت بازی ها</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-home"></i> حساب کاربری <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{url(route('profile_create'))}}">پروفایل شخصی</a></li>
+                            <li><a href="{{url('/pacespace/logout')}}">خروج از پنل</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -71,7 +79,7 @@
 
                 <ul class="nav navbar-right">
                     <li>
-                        <a href="{{url('/logout')}}" class="user-profile"><i class="fa fa-power-off"></i>  خروج</a>
+                        <a href="{{url('pacespace/logout')}}" class="user-profile"><i class="fa fa-power-off"></i>  خروج</a>
                     </li>
                 </ul>
 

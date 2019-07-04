@@ -13,13 +13,15 @@ class Beacon extends Model
     protected $fillable = [
         'uuid',
         'minor',
+        'name',
         'major',
         'tx',
         'location',
         'mac_address',
         'group',
         'nature',
-        ''
+        'user_id',
+        'shop_name'
     ];
 
     public function customers()

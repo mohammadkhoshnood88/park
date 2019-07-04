@@ -15,11 +15,12 @@ class CreateNotifsTable extends Migration
     {
         Schema::create('notifs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('uuid');
+            $table->integer('user_id');
+            $table->string('beacon_mac');
             $table->string('txt');
             $table->string('url');
-            $table->string('pic_name');
-            $table->string('pic_path');
+            $table->string('pic');
+            $table->string('vid');
             $table->timestamps();
         });
     }

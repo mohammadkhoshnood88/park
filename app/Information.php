@@ -9,8 +9,8 @@ class Information extends Model
     protected $fillable = [
         'natures',
         'groups',
-        'locations'
-
-
+        'locations',
+        'user_id',
+        'shop_name'
         ];
 }

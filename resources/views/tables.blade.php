@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('title')
-    گزارشات
+    گزارش ها
 @endsection
 @section('header')
     <script src="{{asset('css/vendors/jquery/dist/jquery.min.js')}}"></script>
@@ -23,7 +23,7 @@
     @endsection
 
 @section('subtitle')
-    گزارشات
+    گزارش ها
     @endsection
 @section('content')
 
@@ -66,9 +66,10 @@
                     {{ $iot->links() }}
 
                 <div class="container">
-                    <div id="flip"> گزارشات خاص<i style="font-size: 20px" class="fa fa-chevron-down"></i></div>
+                    <div id="flip" class="btn btn-primary"> گزارشات خاص<i style="font-size: 17px" class="fa fa-chevron-down"></i></div>
                     <div id="panel">
-                    <form method="post" action="{{url('api/iot/specialrecord')}}">
+                    <form method="post" action="{{route('beacon_record')}}">
+                        {{csrf_field()}}
                         <div class="x_panel x_content">
                             <form class="row x_title">
                                 <div class="col-md-6">
@@ -120,7 +121,8 @@
                             </div>
                         </div>
                     </form>
-                        <form method="post" action="{{url('api/iot/specialrecord')}}">
+                        <form method="post" action="{{route('beacon_record')}}">
+                            {{csrf_field()}}
                             <div class="row x_title">
                                 <div class="form-group col-md-6">
                                     <label class="control-label col-md-8 col-sm-3 col-xs-12" for="uuid">مرتب سازی بر

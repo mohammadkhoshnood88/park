@@ -15,12 +15,21 @@ class CreateRacesTable extends Migration
     {
         Schema::create('races', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('mac_address');
+            $table->integer('user_id');
+            $table->string('shop_name');
             $table->string('beacon_mac');
+            $table->string('groups');
+            $table->string('race_title');
+            $table->string('race_desc');
             $table->string('type');
             $table->timestamps();
         });
     }
+
+
+
+
+
 
     /**
      * Reverse the migrations.

@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Beacon;
 use App\Customer;
-use App\iot;
+use App\Favorite;
+use App\Information;
+use App\Iot;
+use App\Message;
 use App\Notif;
+use App\Shop;
 use App\User;
+
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class IotController extends Controller
 {
@@ -17,6 +25,7 @@ class IotController extends Controller
     {
         $this->middleware('web')->only('inform');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,14 +33,16 @@ class IotController extends Controller
      */
     public function index()
     {
+//        return Auth::user()->id;
         $beacon_iot = DB::table('iots')
             ->join('beacons', 'iots.beacon_mac', '=', 'beacons.mac_address')
+//            ->where('beacon.user_id' ,'=', Auth::user()->id)
             ->select('beacons.*', 'iots.count')
             ->get();
 
         $iot = Iot::paginate(30);
 
-        $beacons = Beacon::all();
+        $beacons = Beacon::all()->where('user_id', '=', Auth::user()->id);
         $customer = Customer::all();
         $spiot = "";
         return view('tables', compact('iot', 'beacons', 'customer', 'beacon_iot', 'spiot'));
@@ -55,33 +66,60 @@ class IotController extends Controller
      */
     public function store(Request $request)
     {
-//return ;
-        $customer = Customer::where('mac_address', $request->get('mac_address'))->first();
-        if (!$customer) {
-            $customers = new Customer();
+        $customer = Customer::where('mac_address', $request->get('mac_address'))->get();
+        if (count($customer) == 0) {
+//            return "customer nist";
             Customer::create([
                 'mac_address' => $request->get('mac_address'),
                 'name' => "name",
                 'telnum' => "telnum",
-                'getrace'=> "getrace",
-                'time'=>"time",
-                'points'=>"0"
+                'getrace' => "getrace",
+                'time' => "time",
+                'points' => "0"
             ]);
         }
+//        $iots = Iot::where(['beacon_mac' => $request->get('beacon_mac'), 'customer_id' => $request->get('mac_address')])->first();
+//        $beacon = Beacon::where('mac_address', $request->get('beacon_mac'))->first();
 
-        $iots = Iot::where(['beacon_mac' => $request->get('beacon_mac'), 'customer_id' => $request->get('mac_address')])->first();
-        $beacon = Beacon::where('mac_address', $request->get('beacon_mac'))->first();
+        $iot = Iot::where(['customer_id'=> $request->get('mac_address') , 'beacon_mac' => $request->get('beacon_mac') ])->get();
+        if (count($iot) == 0){
+//            return "iot nist";
 
-        $iot = new Iot();
+            $iot = new Iot();
         $iot->customer_id = $request->get('mac_address');
         $iot->beacon_mac = $request->get('beacon_mac');
-        $iot->beacon_id = $request->get('uuid');
+        $iot->beacon_id = $request->get('beacon_mac');
         $iot->rssi = $request->get('rssi');
         $iot->count = '1';
         $iot->save();
 
-        return response()->json("hello" . $request->get('beacon_mac'));
+        $notifs = Notif::where('beacon_mac', $request->get('beacon_mac'))->get();
+        return $notifs[0]->txt;
+        }
+        elseif (count($iot) == 1){
+//            return "iot hast";
 
+            $coun = Iot::where(['customer_id'=> $request->get('mac_address') , 'beacon_mac' => $request->get('beacon_mac') ])->get();
+//            return $coun;
+            $count = $coun[0]->count;
+            $count = $count +1 ;
+            DB::table('iots')
+                ->where(['customer_id'=> $request->get('mac_address') , 'beacon_mac' => $request->get('beacon_mac') ])
+                ->update(['count' => $count]);
+
+//            return $coun;
+            if ($coun[0]->count == 10){
+                return "/////// 10 ///////";
+            }
+//            return "count++";
+        }
+
+
+    }
+
+    public function qrcode()
+    {
+        return view('qrcode');
     }
 
     /**
@@ -136,44 +174,61 @@ class IotController extends Controller
      */
     public function notif()
     {
-        $notifs = Notif::all();
+        $notifs = DB::table('notifs')
+            ->join('beacons', 'notifs.beacon_mac', '=', 'beacons.mac_address')
+            ->select('beacons.*', 'notifs.*')
+            ->get();
+//        $notifs = Notif::all()->where('user_id', '=', Auth::user()->id);
         return view('notif', compact('notifs'));
+    }
+
+    public function message_create()
+    {
+
+        $messages = Message::all()->where('user_id', '=', Auth::user()->id);
+        $favorites = Favorite::all();
+//        return $favorites[0]->favorite;
+        return view('message_shop', compact('messages', 'favorites'));
     }
 
     public function editnotif($notif, Request $request)
     {
+//        $this->authorize('UserPark', $notif);
+        $notifs = Notif::where('beacon_mac', $notif)->first();
+        $beacon_name = Beacon::where('mac_address' , $notif)->first();
+        $beacon_name = $beacon_name->name;
 
-        $notifs = Notif::where('uuid', $notif)->first();
-
-        return view('editnotif', compact('notifs'));
+        return view('editnotif', compact('notifs' , 'beacon_name'));
     }
 
     public function updatenotif(Request $request)
     {
-
+//    if ($request->pic!=""){
+//        return "salam";
+//    }
         if ($request->txt != "") {
             DB::table('notifs')
-                ->where(['uuid' => $request->uuid])
+                ->where(['beacon_mac' => $request->get('beacon_mac')])
                 ->update(['txt' => $request->get('txt')]);
         }
         if ($request->pic != "") {
             DB::table('notifs')
-                ->where(['uuid' => $request->uuid])
+                ->where(['beacon_mac' => $request->get('beacon_mac')])
                 ->update(['pic' => $request->get('pic')]);
         }
         if ($request->vid != "") {
             DB::table('notifs')
-                ->where(['uuid' => $request->uuid])
+                ->where(['beacon_mac' => $request->get('beacon_mac')])
                 ->update(['vid' => $request->get('vid')]);
         }
         if ($request->url != "") {
             DB::table('notifs')
-                ->where(['uuid' => $request->uuid])
+                ->where(['beacon_mac' => $request->get('beacon_mac')])
                 ->update(['url' => $request->get('url')]);
         }
         if ($request->dis != "") {
             DB::table('notifs')
-                ->where(['uuid' => $request->uuid])
+                ->where(['beacon_mac' => $request->get('beacon_mac')])
                 ->update(['dis' => $request->get('dis')]);
         }
 
@@ -182,27 +237,118 @@ class IotController extends Controller
 
     public function inform()
     {
-        $beacons = Beacon::all();
-//        return $beacons;
-        return view('information', compact('beacons'));
+        $info = Information::where('user_id', Auth::user()->id)->get();
+        $text = "";
+        if (count($info) == 1) {
+            $text = "شما یک بار برای فروشگاه خود اطلاعات پایه را وارد کرده اید. در صورت ادامه اطلاعات جدید به جای آنها خواهد نشست.";
+        }
+        $beacons = Beacon::all()->where('user_id', '=', Auth::user()->id);
+        $favorites = Favorite::all();
+//        return $favorites;
+        return view('information', compact('beacons', 'favorites' , 'text'));
     }
 
     public function setinform(Request $request)
     {
+        $info = Information::where('user_id', Auth::user()->id)->get();
+        if (count($info) == 1) {
+            $location = $request->locationlist;
+            $location = substr($location, 1);
+            $location = explode("+", $location);
 
-        $location=$request->locationlist;
-        $location = substr($location,1);
-        $location = explode("+",$location);
+            $nature = $request->naturelist;
+            $nature = substr($nature, 1);
+            $nature = explode("+", $nature);
 
-        $nature = $request->naturelist;
-        $nature = substr($nature,1);
-        $nature = explode("+",$nature);
+            $group = $request->grouplist;
+            $group = substr($group, 1);
+            $group = explode("+", $group);
 
-        $group = $request->grouplist;
-        $group = substr($group,1);
-        $group = explode("+",$group);
-        $information = array();
-        $information = [$group , $nature , $location];
-        return $information;
+            DB::table('information')
+                ->where(['user_id' => Auth::user()->id])
+                ->update(['groups' => serialize($group)]);
+            DB::table('information')
+                ->where(['user_id' => Auth::user()->id])
+                ->update(['natures' => serialize($nature)]);
+            DB::table('information')
+                ->where(['user_id' => Auth::user()->id])
+                ->update(['locations' => serialize($location)]);
+        } elseif (count($info) == 0) {
+            $location = $request->locationlist;
+            $location = substr($location, 1);
+            $location = explode("+", $location);
+
+            $nature = $request->naturelist;
+            $nature = substr($nature, 1);
+            $nature = explode("+", $nature);
+
+            $group = $request->grouplist;
+            $group = substr($group, 1);
+            $group = explode("+", $group);
+
+            $shop_nam = Shop::where('user_id', Auth::user()->id)->get();
+            $shop_name = $shop_nam[0]->shop_name;
+            Information::create([
+                'groups' => serialize($group),
+                'natures' => serialize($nature),
+                'locations' => serialize($location),
+                'user_id' => Auth::user()->id,
+                'shop_name' => $shop_name ?? "shop_name",
+            ]);
+        }
+        return redirect('/');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+//    public function setfavorite(Request $request)
+//    {
+////        $validreq = $request->validate([
+////            'favorite' => 'required',
+////            'favoritefile' => 'file|image|mimes:jpeg,png,jpg|size:50000'
+////        ]);
+////        return $validreq;
+//
+////        $file = $validreq['favoritefile'];
+////        $filename = time() . $file->getClientOriginalName();
+//
+//        $file = $request->file('favoritefile');
+//        $filename = time() . $file->getClientOriginalName();
+//        $file->move('favorites/phptos' , $filename);
+//        Favorite::create([
+//            'favorite' => $request->get('favorite') ,
+//            'path' => "/favorites/photos/{$filename}"
+//        ]);
+//        return back();
+//    }
+
+    public function profile()
+    {
+        $shop = Shop::where('user_id', Auth::user()->id)->get();
+
+            if (count($shop) == 1) {
+                $text = "شما یک بار اطلاعات شخصی خود را وارد کرده اید، در صورت تغییر اطلاعات قبلی حذف می شوند.";
+            } elseif (count($shop) == 0) {
+                $text = "";
+            }
+            $profile = Shop::all()->where('user_id', '=', Auth::user()->id);
+//        dd($profile);
+            return view('profile', compact('profile', 'text'));
+    }
+
+    public function aaaa()
+    {
+        return Auth::user();
+        $a = Favorite::all()->get('1');
+        return $a->path;
+        return "<img src=\"/favorites/photos/1557338999State Diagram.png\">";
+    }
+
+    public function destroy_message($message)
+    {
+        Message::where('id', $message)->delete();
+        return redirect('/api/message/create');
     }
 }

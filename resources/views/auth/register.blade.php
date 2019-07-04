@@ -64,15 +64,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="mac" class="col-md-4 col-form-label text-md-right">آدرس مک بیکن :</label>
-
-                            <div class="col-md-8">
-                                <input id="mac" type="text" class="form-control" name="beacon_mac" required>
-
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">رمز عبور :</label>
 
                             <div class="col-md-8">

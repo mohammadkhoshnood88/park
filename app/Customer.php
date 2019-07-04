@@ -14,4 +14,15 @@ class Customer extends Model
         'time',
         'points',
     ];
+
+    public function message()
+    {
+        $messages = DB::table('follows')
+            ->join('messages', 'follows.shop_name', '=', 'messages.shop_name')
+            ->where(['follows.follow', true] , ['follows.mac_address' , $this->mac_address])
+            ->select( 'messages.*' , 'follows.*')
+            ->get();
+
+        return $messages;
+    }
 }

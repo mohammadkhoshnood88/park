@@ -53,7 +53,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'mobile' => ['required', 'string'],
-            'beacon_mac' => ['required', 'string'],
         ]);
     }
 
@@ -70,7 +69,6 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'mobile' => $data['mobile'],
-            'beacon_mac' => $data['beacon_mac'],
             'password' => Hash::make($data['password']),
         ]);
     }

@@ -15,6 +15,8 @@ class CreateInformationTable extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->string('shop_name');
             $table->string('groups');
             $table->string('locations');
             $table->string('natures');

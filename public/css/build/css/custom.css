@@ -1833,6 +1833,19 @@ footer {
     opacity: 1;
     transition: all .2s ease
 }
+.x_panel_notif {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 17px;
+    display: inline-block;
+    background: #6260ec;
+    border: 1px solid #e6e9ed;
+    /*box-shadow: 12px 1px 4px #abec63;*/
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease
+}
 
 .x_title {
     border-bottom: 2px solid #e6e9ed;

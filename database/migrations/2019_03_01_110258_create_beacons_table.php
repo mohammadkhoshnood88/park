@@ -16,6 +16,8 @@ class CreateBeaconsTable extends Migration
         Schema::create('beacons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
+            $table->string('shop_name');
+            $table->string('name');
             $table->string('uuid');
             $table->string('mac_address')->unique();
             $table->String('major');

@@ -49,7 +49,7 @@ class LoginController extends Controller
         $user = User::all()->where('mobile', '=', $request->mobile)->first();
 
         if (!$user) {
-            return "<div style='background: #2176bd;border: 1px solid saddlebrown;margin: 10px'><h2 style='text-align: center;'>شما هنوز ثبت نام نکرده اید
+            return "<div style='background: #2176bd;border: 1px solid saddlebrown;margin: 50px; box-shadow: 10px 10px 25px black'><h2 style='text-align: center;'>شما هنوز ثبت نام نکرده اید
 </h2><h5 style='text-align: center;'><a href='/register'>ایجاد حساب</a></h5></div>";
         }
         if ($user->isuser == 1) {

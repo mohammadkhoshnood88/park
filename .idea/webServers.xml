@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="9889ed08-ff3a-4e9c-892e-cd4558a17bee" name="park_ftp" url="http://171.22.26.68:2222">
-        <fileTransfer host="koulero.ir" port="21">
+      <webServer id="9889ed08-ff3a-4e9c-892e-cd4558a17bee" name="park_ftp" url="https://iot.ut.ac.ir:8443">
+        <fileTransfer host="iot.ut.ac.ir" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

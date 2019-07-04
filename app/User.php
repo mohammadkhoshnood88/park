@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'mobile', 'password', 'beacon_mac', 'isadmin' , 'isuser'
+        'name', 'mobile', 'password', 'isadmin' , 'isuser'
     ];
 
     /**
@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function owns($aaaa)
+    {
+        return $this->id == $aaaa->user_id;
+    }
 }

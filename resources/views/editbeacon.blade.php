@@ -33,120 +33,122 @@
         <div class="x_panel">
 
 
-                <div class="x_title clearfix">
-                    <h3>فرم ویرایش بیکن  {{$beacons[0]->uuid}} </h3>
-                </div>
+            <div class="x_title clearfix">
+                <h3>فرم ویرایش بیکن {{$beacons[0]->name}} </h3>
+            </div>
 
             <div class="x_content">
                 <br/>
                 <br/>
 
-                <form method="post" action="{{route('beacon.update', ['beacon' => $beacons[0]->uuid])}}" id="demo-form2"
+                <form method="post" action="{{route('beacon.update', ['beacon' => $beacons[0]->mac_address])}}" id="demo-form2"
                       data-parsley-validate class="form-horizontal form-label-left">
                     {!! method_field('PUT') !!}
-                    <input type="hidden" name="_method" value="PUT" />
+                    <input type="hidden" name="_method" value="PUT"/>
                     {{csrf_field()}}
                     <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label col-md-5 col-sm-3 col-xs-12" for="name">کد بیکن
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="text"
-                                   name="name" value="{{$beacons[0]->name}}"
-                                   class="form-control col-md-7 col-xs-12">
+                        <div class="x_panel_notif"
+                             style="background:#34495e;color:white;border-radius: 3px; box-shadow: 5px 5px 5px #a858ec;padding: 4px;margin-bottom: 12px">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: center;" for="name">نام بیکن
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text"
+                                           name="name" value="{{$beacons[0]->name}}"
+                                           class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: center;" for="uuid">uuid
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="uuid" value="{{$beacons[0]->uuid}}"
+                                           class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: center;">mac_address
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input name="beacon_mac"
+                                           class="date-picker form-control col-md-7 col-xs-12"
+                                           value="{{$beacons[0]->mac_address}}" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="middle-name"
+                                       class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: center;">major</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input class="form-control col-md-7 col-xs-12" type="text"
+                                           value="{{$beacons[0]->major}}"
+                                           name="major">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: center;">minor
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input name="minor" class="date-picker form-control col-md-7 col-xs-12"
+                                           value="{{$beacons[0]->minor}}" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: center;">tx
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input name="tx" id="birthday"
+                                           class="date-picker form-control col-md-7 col-xs-12"
+                                           value="{{$beacons[0]->tx}}" type="text">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-5 col-sm-3 col-xs-12" for="uuid">uuid
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="text" name="uuid" value="{{$beacons[0]->uuid}}"
-                                   class="form-control col-md-7 col-xs-12">
+                    <div class="col-md-5" style="background:#34495e;color:white;border-radius: 3px; box-shadow: 5px 5px 5px #a858ec;padding: 4px;margin-bottom: 12px">
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">ماهیت بیکن</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input class="date-picker form-control col-md-7 col-xs-12"
+                                       value="{{$beacons[0]->nature}}" type="text" readonly>
+                                <select name="nature" class="form-control">
+                                    <option>انتخاب گزینه</option>
+                                    @foreach($natures as $nature)
+                                        <option>{{$nature}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-5 col-sm-3 col-xs-12">mac_address
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input name="beacon_mac"
-                                   class="date-picker form-control col-md-7 col-xs-12"
-                                   value="{{$beacons[0]->mac_address}}" type="text">
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">طبقه بندی</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input class="date-picker form-control col-md-7 col-xs-12"
+                                       value="{{$beacons[0]->group}}" type="text" readonly>
+                                <select name="group" class="form-control">
+                                    <option>انتخاب گزینه</option>
+                                    @foreach($groups as $group)
+                                        <option>{{$group}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="middle-name"
-                               class="control-label col-md-3 col-sm-3 col-xs-12">major</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="form-control col-md-7 col-xs-12" type="text" value="{{$beacons[0]->major}}"
-                                   name="major">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">minor
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input name="minor" class="date-picker form-control col-md-7 col-xs-12"
-                                   value="{{$beacons[0]->minor}}" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">tx
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input name="tx" id="birthday"
-                                   class="date-picker form-control col-md-7 col-xs-12"
-                                   value="{{$beacons[0]->tx}}" type="text">
-                        </div>
-                    </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">ماهیت بیکن</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="date-picker form-control col-md-7 col-xs-12"
-                                   value="{{$beacons[0]->nature}}" type="text" readonly>
-                            <select name="nature" class="form-control">
-                                <option>انتخاب گزینه</option>
-                                <option>گزینه اول</option>
-                                <option>گزینه دوم</option>
-                                <option>گزینه سوم</option>
-                                <option>گزینه چهارم</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">طبقه بندی</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="date-picker form-control col-md-7 col-xs-12"
-                                   value="{{$beacons[0]->group}}" type="text" readonly>
-                            <select name="group" class="form-control">
-                                <option>انتخاب گزینه</option>
-                                <option>گزینه اول</option>
-                                <option>گزینه دوم</option>
-                                <option>گزینه سوم</option>
-                                <option>گزینه چهارم</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">موقعیت مکانی</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="date-picker form-control col-md-7 col-xs-12"
-                                   value="{{$beacons[0]->location}}" type="text" readonly>
-                            <select name="location" class="form-control">
-                                <option>انتخاب گزینه</option>
-                                <option>گزینه اول</option>
-                                <option>گزینه دوم</option>
-                                <option>گزینه سوم</option>
-                                <option>گزینه چهارم</option>
-                            </select>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">موقعیت مکانی</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input class="date-picker form-control col-md-7 col-xs-12"
+                                       value="{{$beacons[0]->location}}" type="text" readonly>
+                                <select name="location" class="form-control">
+                                    <option>انتخاب گزینه</option>
+                                    @foreach($locations as $location)
+                                        <option>{{$location}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                            <button type="submit" class="btn btn-outline-primary">ثبت</button>
+                            <button type="submit" class="btn btn-primary">ثبت</button>
+                            <a href="{{route('beacon_create')}}" class="btn btn-danger">بازگشت</a>
                         </div>
                     </div>
 
