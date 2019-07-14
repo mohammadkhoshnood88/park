@@ -3,7 +3,7 @@
     پروفایل
 @endsection
 @section('header')
-  @include('home.js')
+    @include('home.js')
 @endsection
 
 @section('content')
@@ -15,7 +15,8 @@
 
                 {{csrf_field()}}
                 <div class="form-group" style="margin: 20px">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name" style="text-align: right">نام و نام خانوادگی :
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name" style="text-align: right">نام و
+                        نام خانوادگی :
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <input type="text"
@@ -34,10 +35,12 @@
                     </div>
                 </div>
                 <div class="form-group" style="margin: 20px">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="shop_name" style="text-align: right">نام فروشگاه :
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="shop_name" style="text-align: right">نام
+                        فروشگاه :
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <input type="text" name="shop_name" id="input2"
+                               value="{{($profile->shop_name) ? $profile->shop_name : ""}}"
                                class="col-md-6 col-xs-12">
                     </div>
                 </div>
@@ -64,16 +67,24 @@
                     <label for="middle-name"
                            class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: right">آدرس :</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input name="address" class="col-md-6 col-xs-12" value="" type="text" id="input6">
+                        <input name="address" class="col-md-6 col-xs-12"
+                               value="{{($profile->address) ? $profile->address : ""}}" type="text" id="input6">
                     </div>
                 </div>
                 <div class="form-group" style="margin: 20px">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: right">دسته بندی فروشگاه :
                     </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input name="type" id="input7"
-                               class=" col-md-6 col-xs-12"
-                               type="text">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        {{--<input name="type" id="input7"--}}
+                        {{--class=" col-md-6 col-xs-12"--}}
+                        {{--type="text">--}}
+                        <select name="type" id="input7" class="form-control">
+                            {{--<option>انتخاب گزینه</option>--}}
+                            @foreach($favorites as $favorite)
+                                <option>{{$favorite->favorite}}</option>
+                            @endforeach
+
+                        </select>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-success">تکمیل پروفایل</button>
@@ -81,7 +92,7 @@
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:2%">
             <div class="form-group" style="margin: 5px">
-                <label class="control-label col-md-6 col-sm-3 col-xs-6" >نام و نام خانوادگی :
+                <label class="control-label col-md-6 col-sm-3 col-xs-6">نام و نام خانوادگی :
                 </label>
                 <label id="output1" class="control-label col-md-6 col-xs-6" style="color: #000;">
                     {{auth()->user()->name}}
@@ -89,7 +100,7 @@
             </div>
 
             <div class="form-group" style="margin: 5px">
-                <label class=" col-md-6 col-sm-3 col-xs-6" >شماره تماس :
+                <label class=" col-md-6 col-sm-3 col-xs-6">شماره تماس :
                 </label>
                 <label id="output3" class="control-label col-md-6 col-xs-6" style="color: #000;">
                     {{auth()->user()->mobile}}
@@ -97,39 +108,39 @@
             </div>
 
             <div class="form-group" style="margin: 5px">
-                <label class="control-label col-md-6 col-sm-3 col-xs-6" >نام فروشگاه :
+                <label class="control-label col-md-6 col-sm-3 col-xs-6">نام فروشگاه :
                 </label>
                 <label id="output2" class="control-label col-md-6 col-xs-6" style="color: #000;">
-                    تعیین نشده است
+                    {{($profile->shop_name) ? $profile->shop_name : "تعیین نشده است"}}
                 </label>
             </div>
 
             <div class="form-group" style="margin: 5px">
-                <label class="control-label col-md-6 col-sm-3 col-xs-6" >آدرس ایمیل :
+                <label class="control-label col-md-6 col-sm-3 col-xs-6">آدرس ایمیل :
                 </label>
                 <label id="output4" class="control-label col-md-6 col-xs-6" style="color: #000;">
                     تعیین نشده است
                 </label>
             </div>
             <div class="form-group" style="margin: 5px">
-                <label class="control-label col-md-6 col-sm-3 col-xs-6" >لوگو :
+                <label class="control-label col-md-6 col-sm-3 col-xs-6">لوگو :
                 </label>
                 <label id="output5" class="control-label col-md-6 col-xs-6" style="color: #000;">
-                    تعیین نشده است
+                    {{($profile->logo) ? $profile->logo : "تعیین نشده است"}}
                 </label>
             </div>
             <div class="form-group" style="margin: 5px">
-                <label class="control-label col-md-6 col-sm-3 col-xs-6" >آدرس :
+                <label class="control-label col-md-6 col-sm-3 col-xs-6">آدرس :
                 </label>
                 <label id="output6" class="control-label col-md-6 col-xs-6" style="color: #000;">
-                    تعیین نشده است
+                    {{($profile->address) ? $profile->address : "تعیین نشده است"}}
                 </label>
             </div>
             <div class="form-group " style="margin: 5px">
-                <label class="control-label col-md-6 col-sm-3 col-xs-6" >دسته بندی فروشگاه :
+                <label class="control-label col-md-6 col-sm-3 col-xs-6">دسته بندی فروشگاه :
                 </label>
                 <label id="output7" class="control-label col-md-6 col-xs-6" style="color: #000;">
-{{--                {{\App\Shop::where('user_id' , '=' , auth()->user()->id)}}--}}
+                    {{($profile->type) ? $profile->type : "تعیین نشده است"}}
                 </label>
             </div>
 
@@ -139,15 +150,14 @@
     <div class="form-group">
 
 
-
     </div>
 @endsection
 @section('footer')
     <style>
-        #input1 , #input2 , #input3 , #input4 , #input5 , #input6 , #input7{
+        #input1, #input2, #input3, #input4, #input5, #input6, #input7 {
             border-top: none;
-            border-left:none;
-            border-right:none;
+            border-left: none;
+            border-right: none;
         }
     </style>
 

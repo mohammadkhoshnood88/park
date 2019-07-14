@@ -104,19 +104,7 @@
                         </div>
                     </div>
                     <div class="col-md-5" style="background:#34495e;color:white;border-radius: 3px; box-shadow: 5px 5px 5px #a858ec;padding: 4px;margin-bottom: 12px">
-                        <div class="form-group col-md-12">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">ماهیت بیکن</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input class="date-picker form-control col-md-7 col-xs-12"
-                                       value="{{$beacons[0]->nature}}" type="text" readonly>
-                                <select name="nature" class="form-control">
-                                    <option>انتخاب گزینه</option>
-                                    @foreach($natures as $nature)
-                                        <option>{{$nature}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+
                         <div class="form-group col-md-12">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">طبقه بندی</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">

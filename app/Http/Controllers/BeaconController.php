@@ -43,15 +43,13 @@ class BeaconController extends Controller
 
         if (count($information) != 0) {
             $groups = unserialize($information[0]->groups);
-            $natures = unserialize($information[0]->natures);
             $locations = unserialize($information[0]->locations);
         } else {
             $groups = [];
-            $natures = [];
             $locations = [];
         }
         $beacons = Beacon::all()->where('user_id', '=', Auth::user()->id);
-        return view('setbeacon', compact('beacons', 'groups', 'natures', 'locations'));
+        return view('setbeacon', compact('beacons', 'groups', 'locations'));
     }
 
     /**
@@ -75,7 +73,6 @@ class BeaconController extends Controller
             'minor' => $request->get('minor'),
             'location' => $request->get('location'),
             'group' => $request->get('group'),
-            'nature' => $request->get('nature'),
             'tx' => '1'
         ]);
         Notif::create([
@@ -112,16 +109,14 @@ class BeaconController extends Controller
 
         if (count($information) != 0) {
             $groups = unserialize($information[0]->groups);
-            $natures = unserialize($information[0]->natures);
             $locations = unserialize($information[0]->locations);
         } else {
             $groups = [];
-            $natures = [];
             $locations = [];
         }
         $beacons = Beacon::where('mac_address', $beacon)->get();
 //        return $beacons;
-        return view('editbeacon', compact('beacons', 'groups', 'natures', 'locations'));
+        return view('editbeacon', compact('beacons', 'groups', 'locations'));
     }
 
     /**
@@ -146,17 +141,13 @@ class BeaconController extends Controller
         DB::table('beacons')
             ->where(['mac_address' => $beacon])
             ->update(['major' => $request->get('major')]);
-        if ($request->get('nature') != "انتخاب گزینه") {
-            DB::table('beacons')
-                ->where(['mac_address' => $beacon])
-                ->update(['nature' => $request->get('nature')]);
-        }
-        if ($request->get('nature') != "انتخاب گزینه") {
+
+        if ($request->get('group') != "انتخاب گزینه") {
             DB::table('beacons')
                 ->where(['mac_address' => $beacon])
                 ->update(['group' => $request->get('group')]);
         }
-        if ($request->get('nature') != "انتخاب گزینه") {
+        if ($request->get('location') != "انتخاب گزینه") {
             DB::table('beacons')
                 ->where(['mac_address' => $beacon])
                 ->update(['location' => $request->get('location')]);
@@ -446,7 +437,7 @@ class BeaconController extends Controller
     {
         $file = $request->file('file');
         $filename = time() . $file->getClientOriginalName();
-        $file->move('messages/phptos', $filename);
+        $file->move('/messages/photos', $filename);
         $shop_name = Shop::all()->where('user_id', '=', Auth::user()->id);
 //        return $shop_name;
         Message::create([

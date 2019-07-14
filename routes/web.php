@@ -14,10 +14,7 @@
 Auth::routes();
 //////////////////////////     get url //////////////////////
 Route::get('/', function () {
-//    return view('home');
 
-//    $favorite = \App\Favorite::where('id' , '1')->get();
-//    return "<img src=\"/public/favorites/photos/1560236180cp-ssl4.png\">";
 
     $profile = \App\Shop::all()->where('user_id', '=', \Illuminate\Support\Facades\Auth::user()->id);
 //    return count($profile);
@@ -40,8 +37,10 @@ Route::get('/', function () {
      }
      $visit_shop = array_sum($count);
 
+    $user_not_register = \App\User::where('isuser' , 0)->get();
+//    return $user_not_register;
 
-    return view('welcome', compact('beacon_admin', 'user_admin' , 'beacon_shop' , 'race_shop' , 'visit_shop' , 'profile' , 'unicount'));
+    return view('welcome', compact('beacon_admin', 'user_admin' , 'beacon_shop' , 'race_shop' , 'visit_shop' , 'profile' , 'unicount' , 'user_not_register'));
 })->middleware('auth');
 Route::get('/waiting', function () {
 

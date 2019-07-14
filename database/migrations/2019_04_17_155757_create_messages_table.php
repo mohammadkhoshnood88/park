@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBeaconsTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,16 @@ class CreateBeaconsTable extends Migration
      */
     public function up()
     {
-        Schema::create('beacons', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('shop_name');
-            $table->string('name');
-            $table->string('uuid');
-            $table->string('mac_address')->unique();
-            $table->String('major');
-            $table->String('minor');
-            $table->String('tx');
-            $table->string('location');
-            $table->string('group');
+            $table->string('content');
+            $table->string('pic');
+            $table->string('type');
+            $table->string('favorite');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -37,6 +32,6 @@ class CreateBeaconsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beacons');
+        Schema::dropIfExists('messages');
     }
 }

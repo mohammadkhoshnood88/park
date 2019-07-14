@@ -19,6 +19,7 @@
 
     <link href="{{asset('css/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}"
           rel="stylesheet">
+    <link href="{{asset('css/vendors/switchery/dist/switchery.min.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
 

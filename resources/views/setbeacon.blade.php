@@ -80,19 +80,7 @@
                                                required="required" type="text">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: right">ماهیت بیکن :</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <select name="nature" class="form-control">
 
-                                            <option>انتخاب گزینه</option>
-                                            @foreach($natures as $nature)
-                                            <option>{{$nature}}</option>
-                                            @endforeach
-
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: right">طبقه بندی :</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -127,61 +115,62 @@
                             </form>
                             <div id="flip" style="text-align: center;" class="btn btn-success">مشاهده بیکن های ثبت شده
                             </div>
-                            <div id="panel" class="table-responsive">
-                                <table class="table table-striped jumbotron bulk_action">
-                                    <thead>
-                                    <tr class="headings">
+    <div id="panel" class="table-responsive">
+        @if(count($beacons) == 0)
+            <p style="text-align: center;color: #2176bd">هنوز بیکنی را ثبت نکرده اید.</p>
+        @else
+            <table class="table table-striped jumbotron bulk_action">
+                <thead>
+                <tr class="headings">
 
-                                        <th class="column-title">نام بیکن</th>
-                                        <th class="column-title">uuid</th>
-                                        <th class="column-title">مک آدرس</th>
-                                        <th class="column-title">major</th>
-                                        <th class="column-title">minor</th>
-                                        {{--<th class="column-title">tx</th>--}}
-                                        <th class="column-title">طبقه بندی</th>
-                                        <th class="column-title">ماهیت بیکن</th>
-                                        <th class="column-title">مکان</th>
+                    <th class="column-title">نام بیکن</th>
+                    <th class="column-title">uuid</th>
+                    <th class="column-title">مک آدرس</th>
+                    <th class="column-title">major</th>
+                    <th class="column-title">minor</th>
+                    {{--<th class="column-title">tx</th>--}}
+                    <th class="column-title">طبقه بندی</th>
+                    <th class="column-title">مکان</th>
 
-                                    </tr>
-                                    </thead>
+                </tr>
+                </thead>
 
-                                    <tbody>
-                                    <input value="{{$i = 1}}" hidden>
-                                    @foreach($beacons as $beacon)
+                <tbody>
+                <input value="{{$i = 1}}" hidden>
+                @foreach($beacons as $beacon)
 
-                                        <tr class="dtr-column">
+                    <tr class="dtr-column">
 
-                                            <td>{{$i}}</td>
-                                            <td>{{$beacon->uuid}}</td>
-                                            <td>{{$beacon->mac_address}}</td>
-                                            <td>{{$beacon->major}}</td>
-                                            <td>{{$beacon->minor}}</td>
-{{--                                            <td>{{$beacon->tx}}</td>--}}
-                                            <td>{{$beacon->group}}</td>
-                                            <td>{{$beacon->nature}}</td>
-                                            <td>{{$beacon->location}}</td>
-                                            <td class="success" style="text-align: center">
-                                                <form action="{{ route('beacon.destroy', ['beacon' => $beacon->mac_address])}}"
-                                                      method="post">
-                                                    {{csrf_field()}}
-                                                    {!! method_field('DELETE') !!}
-                                                    <input type="hidden" name="_method" value="delete"/>
-                                                    <input class="btn btn-danger" type="submit" value="حذف"/>
-                                                </form>
-                                            </td>
-                                            <td class="success">
-                                                <a href="{{ route('beacon.edit', ['beacon' => $beacon->mac_address])}}">
-                                                    <button class="btn btn-success">ویرایش</button>
-                                                </a>
-                                            </td>
+                        <td>{{$i}}</td>
+                        <td>{{$beacon->uuid}}</td>
+                        <td>{{$beacon->mac_address}}</td>
+                        <td>{{$beacon->major}}</td>
+                        <td>{{$beacon->minor}}</td>
+                        {{--                                            <td>{{$beacon->tx}}</td>--}}
+                        <td>{{$beacon->group}}</td>
+                        <td>{{$beacon->location}}</td>
+                        <td class="success" style="text-align: center">
+                            <form action="{{ route('beacon.destroy', ['beacon' => $beacon->mac_address])}}"
+                                  method="post">
+                                {{csrf_field()}}
+                                {!! method_field('DELETE') !!}
+                                <input type="hidden" name="_method" value="delete"/>
+                                <input class="btn btn-danger" type="submit" value="حذف"/>
+                            </form>
+                        </td>
+                        <td class="success">
+                            <a href="{{ route('beacon.edit', ['beacon' => $beacon->mac_address])}}">
+                                <button class="btn btn-success">ویرایش</button>
+                            </a>
+                        </td>
 
-                                        </tr>
-                                        <input value="{{$i++}}" hidden>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-</div>
+                    </tr>
+                    <input value="{{$i++}}" hidden>
+                @endforeach
+                </tbody>
+            </table>
+        @endif
+    </div></div>
 @endsection
 
 @section('footer')

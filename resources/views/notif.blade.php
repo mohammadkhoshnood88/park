@@ -5,15 +5,16 @@
 @section('header')
     <script src="{{asset('css/vendors/jquery/dist/jquery.min.js')}}"></script>
 
-    <script>
-        $(document).ready(function () {
-            $("#observe").hover(function () {
-                $("#data").slideToggle("slow");
-                $("#content").slideToggle("slow");
+    {{--<script>--}}
+        {{--$(document).ready(function () {--}}
+            {{--$("#observe").hover(function () {--}}
+                {{--$("#data").slideToggle("slow");--}}
+                {{--forEach ($("#content") as $("#conten"))--}}
+                {{--$("#conten").slideToggle("slow");--}}
 
-            });
-        });
-    </script>
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 @endsection
 @section('content')
 
@@ -73,29 +74,33 @@
 {{--{{$notifs}}--}}
 
     {{--///////// t e s t ////////////--}}
-    @foreach($notifs as $i=>$notif)
+    @if(count($notifs) == 0)
+    <p>هنوز بیکنی را ثبت نکرده اید. ابتدا از منوی <a href="{{route('beacon_create')}}"><strong>مدیریت بیکن ها</strong></a>بیکن خود را ثبت کنید سپس مجددا وارد این قسمت شوید.</p>
+    @else
+    @foreach($notifs as $notif)
 
         <div id="notif" class="col-md-3 col-sm-4 col-xs-12 profile_details">
 
-            <div class="well profile_view">
+            <div class="well profile_view parent">
                 <div class="col-sm-12">
                     <h2>بیکن {{$notif->name}}</h2>
-                    <div id="data">
-                        <p><strong>طبقه بندی: </strong>{{$notif->group}} </p>
-                        <p><strong>موقعیت: </strong>{{$notif->location}}</p>
-                        <p><strong>ماهیت: </strong>{{$notif->nature}}</p>
+                    <div class="data">
+                        <p><strong>طبقه بندی: </strong>{{$notif->group === 'انتخاب گزینه' ? 'انتخاب نکرده اید'  : $notif->group  }}</p>
+                        <p><strong>موقعیت: </strong>{{$notif->location === 'انتخاب گزینه' ? 'انتخاب نکرده اید'  : $notif->location  }}</p>
                     </div>
-                    <div id="content">
-                        <p><strong>متن: </strong>لباس </p>
-                        <p><strong>URL :</strong>طبقه بالا </p>
-                        <p><strong>آدرس عکس: </strong>لباس زنانه</p>
+                    <div class="content" style="display: none;">
+                        <p><strong>متن: </strong>{{$notif->txt}} </p>
+                        <p><strong>URL :</strong>{{$notif->url}}</p>
+                        <p><strong>آدرس عکس: </strong>{{$notif->pic}}</p>
                     </div>
                 </div>
                 <div class="col-xs-12 bottom text-center" style="padding: 0px;">
                     <div class="col-xs-12 col-sm-6 emphasis">
 
-                        <input type="button" id="observe" class="left btn btn-success btn-xs" value="مشاهده">
-                        <form action="/api/notif/{{{$notif->beacon_mac}}}/edit" method="post" class="left">
+                        {{--<input type="button" id="observe" class="left btn btn-success btn-xs observe" value="مشاهده">--}}
+                        <span class="left btn btn-success btn-xs observe">مشاهده</span>
+
+                        <form action="/pacespace/api/notif/{{{$notif->beacon_mac}}}/edit" method="post" class="left">
                             {{csrf_field()}}
                             <input value="ویرایش" type="submit" class="btn btn-primary btn-xs">
                         </form>
@@ -104,16 +109,38 @@
             </div>
         </div>
     @endforeach
-
+    @endif
 
 @endsection
 @section('footer')
-    <style>
-        #content{
-            display: none;
-        }
-        #notif :hover{
-            background: #f1f4f6;
-        }
-    </style>
+    <script>
+        $(function () {
+            $('.observe').on('mouseenter', function () {
+                let parent = $(this).closest('.parent');
+                let content = parent.find('.content');
+                let data = parent.find('.data');
+
+                content.show(180);
+                data.hide(180);
+            })
+            $('.observe').on('mouseout', function () {
+                let parent = $(this).closest('.parent');
+                let content = parent.find('.content');
+                let data = parent.find('.data');
+
+                content.hide(180);
+                data.show(180);
+            })
+
+
+        })
+    </script>
+    {{--<style>--}}
+        {{--#content{--}}
+            {{--display: none;--}}
+        {{--}--}}
+        {{--#notif :hover{--}}
+            {{--background: #f1f4f6;--}}
+        {{--}--}}
+    {{--</style>--}}
 @endsection

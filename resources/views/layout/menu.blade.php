@@ -79,7 +79,7 @@
 
                 <ul class="nav navbar-right">
                     <li>
-                        <a href="{{url('pacespace/logout')}}" class="user-profile"><i class="fa fa-power-off"></i>  خروج</a>
+                        <a href="{{url('/logout')}}" class="user-profile"><i class="fa fa-power-off"></i>  خروج</a>
                     </li>
                 </ul>
 

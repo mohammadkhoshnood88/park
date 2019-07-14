@@ -19,7 +19,6 @@ class Beacon extends Model
         'location',
         'mac_address',
         'group',
-        'nature',
         'user_id',
         'shop_name'
     ];
