@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/waiting';
+    protected $redirectTo = '/register';
 
     /**
      * Create a new controller instance.
@@ -50,10 +51,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $messages = [
+            "name.required" => "نام را وارد کنید",
+            "mobile.required" => "شماره تماس را وارد کنید",
+            "password.required" => "رمز عبور را وارد کنید",
+            "mobile.min" => "شماره تماس وارد شده معتبر نیست",
+            "password.min" => "رمز عبور حداقل شامل 6 کاراکتر است",
+            "password.confirmed" => "تایید رمز عبور را به درستی وارد کنید",
+        ];
+        $rules = [
             'name' => ['required', 'string', 'max:255'],
-            'mobile' => ['required', 'string'],
-        ]);
+            'mobile' => ['required', 'string', 'max:11', 'min:11'],
+            'password' => 'required|min:6|confirmed',
+        ];
+
+
+           return Validator::make($data, $rules, $messages);
     }
 
     /**
@@ -64,8 +77,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-//        $mobile=User::all()->where('mobile','=',$data['mobile'])->first();
-//        if ($mobile){return "با این شماره تماس یک کاربر وجود دارد.";}
         return User::create([
             'name' => $data['name'],
             'mobile' => $data['mobile'],
@@ -75,7 +86,22 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        Session::flash('name', $request->name);
+        Session::flash('mobile', $request->mobile);
 
+//        if ($request->get('password') == ""){
+//            return back()->with('error_text' , 'رمز عبور را وارد کنید');
+//        }
+        $mobile = User::where('mobile', '=', $request->get('mobile'))->get();
+//        return $mobile;
+//        if (count($mobile)) {
+//            return back()->with('error_text', 'با این شماره تماس یک کاربر وجود دارد.');
+//        }
+
+
+//        if ($this->validator($request->all())->fails()) {
+//            return "asdf";
+//        }
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
@@ -83,8 +109,18 @@ class RegisterController extends Controller
 
 //            $this->guard()->login($user);
 
-            return $this->registered($request, $user)
-                ?: redirect($this->redirectPath());
+//        return back();
+        return redirect($this->redirectPath())->with('error_text_r', 'ثبت نام شما با موفقیت انجام شد، شما در صف تایید قرار گرفتید.');
+
+
+//            return $this->registered($request, $user)
+//                ?: redirect($this->redirectPath());
 
     }
+
+    public function redirectTo()
+    {
+        return url()->previous();
+    }
+
 }

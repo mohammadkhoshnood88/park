@@ -17,10 +17,11 @@ class CreateNotifsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('beacon_mac');
-            $table->string('txt');
-            $table->string('url');
-            $table->string('pic');
-            $table->string('vid');
+            $table->string('txt')->nullable();
+            $table->string('url')->nullable();
+            $table->string('pic')->nullable();
+            $table->boolean('type')->default('0');
+            $table->string('offer_percent')->default('');
             $table->timestamps();
         });
     }

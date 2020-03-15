@@ -12,6 +12,18 @@ class Notif extends Model
         'txt',
         'url',
         'pic',
-        'vid'
+        'type',
+        'offer_percent'
     ];
+    public function shop_name(){
+//        return $this->user_id;
+        $shop_name = Shop::where('user_id' , $this->user_id)->first();
+        return $shop_name->shop_name;
+    }
+    public function shop_id(){
+//        return $this->user_id;
+        $shop_name = Shop::where('user_id' , $this->user_id)->first();
+        return $shop_name->id;
+    }
+
 }

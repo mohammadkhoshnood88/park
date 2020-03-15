@@ -1,65 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bcaf153-4111-4821-a566-3ab3ed1d1989" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Customer_race.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Follow.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_181723_create_customer_races_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_04_16_183234_create_follows_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_04_17_155757_create_messages_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1557338549State Diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558008198logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558008232photo_2019-05-15_21-59-20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558008986photo_2019-01-01_08-25-51.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558009071photo_2019-01-01_08-25-51.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558009096photo_2019-01-01_08-25-54.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558014311photo_2019-03-20_23-30-48.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558014416photo_2019-03-20_23-30-48.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558014441photo_2019-03-20_23-30-48.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558611902WIN_20190117_15_16_11_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558611911WIN_20190117_15_16_11_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558611923WIN_20190117_15_16_11_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558611933WIN_20190117_15_16_10_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favorites/phptos/1558611950WIN_20190117_15_16_11_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1558010303IMG_2391.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558010191IMG_2391.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558010303IMG_2391.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558010316IMG_2391.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558010322IMG_2391.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558010343IMG_2391.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558010499IMG_2391.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558013694photo_2019-05-15_21-56-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558013803photo_2019-01-01_08-25-51.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558013811photo_2019-05-15_21-56-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558596493WIN_20190117_15_16_10_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558608953WIN_20190117_15_16_10_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1558609416WIN_20190117_15_16_11_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1561888901WIN_20190117_15_16_09_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1561889272WIN_20190117_15_16_09_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1561889291WIN_20190117_15_16_09_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1561889328WIN_20190117_15_16_09_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/messages/phptos/1561889533WIN_20190117_15_16_11_Pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/js.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/message_shop.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/qrcode.blade.php" afterDir="false" />
+    <list default="true" id="7bcaf153-4111-4821-a566-3ab3ed1d1989" name="Default Changelist" comment="p2">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_16_181644_create_iot_records_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_04_095849_create_comments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_075236_create_downloads_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dropzone.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/print.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/Button/buttons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/Button/html5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/Button/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/Button/pdfmake.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/Button/vfs_fonts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datatable/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/additional-methods.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dropzone.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/print.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/safe-active-element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/unique-id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/version.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/widget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/all_shop_beacons.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/all_shop_messages.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/buy-beacon.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/main_page.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/racestatus.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user_messages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/park.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/park.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Beacon.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Beacon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Follow.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Follow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BeaconController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BeaconController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IotController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Information.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Information.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/iotresource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/iotresource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Iot.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Iot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notif.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notif.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_01_105953_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_01_105953_create_customers_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_01_110258_create_beacons_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_01_110258_create_beacons_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_06_054850_create_notifs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_06_054850_create_notifs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_13_074851_create_information_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_13_074851_create_information_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_13_102312_create_shops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_13_102312_create_shops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_16_052446_create_favorites_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_16_052446_create_favorites_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_16_183234_create_follows_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_16_183234_create_follows_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_17_155757_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_17_155757_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/build/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/build/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/css/custom.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/build/css/custom.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/american-express.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/cropper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/inbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/mastercard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/media.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/paypal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/picture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/prod-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/prod-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/prod-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/prod-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/prod-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/build/images/visa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1557338549State Diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558008198logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558008232photo_2019-05-15_21-59-20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558008986photo_2019-01-01_08-25-51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558009071photo_2019-01-01_08-25-51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558009096photo_2019-01-01_08-25-54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558014311photo_2019-03-20_23-30-48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558014416photo_2019-03-20_23-30-48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558014441photo_2019-03-20_23-30-48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558611902WIN_20190117_15_16_11_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558611911WIN_20190117_15_16_11_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558611923WIN_20190117_15_16_11_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558611933WIN_20190117_15_16_10_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favorites/phptos/1558611950WIN_20190117_15_16_11_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1558010303IMG_2391.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558010191IMG_2391.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558010303IMG_2391.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558010316IMG_2391.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558010322IMG_2391.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558010343IMG_2391.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558010499IMG_2391.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558013694photo_2019-05-15_21-56-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558013803photo_2019-01-01_08-25-51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558013811photo_2019-05-15_21-56-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558596493WIN_20190117_15_16_10_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558608953WIN_20190117_15_16_10_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1558609416WIN_20190117_15_16_11_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1561888901WIN_20190117_15_16_09_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1561889272WIN_20190117_15_16_09_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1561889291WIN_20190117_15_16_09_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1561889328WIN_20190117_15_16_09_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/messages/phptos/1561889533WIN_20190117_15_16_11_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/editbeacon.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editbeacon.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editnotif.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message_shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message_shop.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/notif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notif.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/qrcode.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/qrcode.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/race.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/race.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/setbeacon.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/setbeacon.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tables.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tables_dynamic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tables_dynamic.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,111 +170,156 @@
     <session id="-251712893">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="113" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="270" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.117" value="1" />
           <entry key="project.open.time.118" value="1" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.133" value="1" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="10" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.28" value="2" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.3" value="4" />
+          <entry key="project.open.time.3" value="12" />
           <entry key="project.open.time.30" value="3" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.32" value="4" />
-          <entry key="project.open.time.33" value="1" />
-          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.32" value="5" />
+          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.35" value="2" />
           <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.37" value="2" />
-          <entry key="project.open.time.38" value="5" />
-          <entry key="project.open.time.39" value="5" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.37" value="3" />
+          <entry key="project.open.time.38" value="6" />
+          <entry key="project.open.time.39" value="6" />
+          <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.40" value="4" />
-          <entry key="project.open.time.41" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.43" value="2" />
-          <entry key="project.open.time.44" value="4" />
-          <entry key="project.open.time.45" value="6" />
+          <entry key="project.open.time.41" value="3" />
+          <entry key="project.open.time.42" value="3" />
+          <entry key="project.open.time.43" value="3" />
+          <entry key="project.open.time.44" value="7" />
+          <entry key="project.open.time.45" value="8" />
           <entry key="project.open.time.46" value="2" />
-          <entry key="project.open.time.47" value="2" />
+          <entry key="project.open.time.47" value="5" />
           <entry key="project.open.time.48" value="4" />
-          <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.50" value="7" />
-          <entry key="project.open.time.51" value="4" />
-          <entry key="project.open.time.52" value="3" />
-          <entry key="project.open.time.53" value="4" />
-          <entry key="project.open.time.54" value="2" />
-          <entry key="project.open.time.55" value="4" />
-          <entry key="project.open.time.56" value="1" />
-          <entry key="project.open.time.57" value="2" />
-          <entry key="project.open.time.58" value="6" />
-          <entry key="project.open.time.60" value="1" />
-          <entry key="project.open.time.61" value="1" />
-          <entry key="project.open.time.63" value="4" />
-          <entry key="project.open.time.66" value="1" />
-          <entry key="project.open.time.69" value="1" />
-          <entry key="project.open.time.70" value="1" />
+          <entry key="project.open.time.49" value="3" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.50" value="9" />
+          <entry key="project.open.time.51" value="9" />
+          <entry key="project.open.time.52" value="6" />
+          <entry key="project.open.time.53" value="5" />
+          <entry key="project.open.time.54" value="6" />
+          <entry key="project.open.time.55" value="8" />
+          <entry key="project.open.time.56" value="7" />
+          <entry key="project.open.time.57" value="6" />
+          <entry key="project.open.time.58" value="12" />
+          <entry key="project.open.time.59" value="6" />
+          <entry key="project.open.time.60" value="7" />
+          <entry key="project.open.time.61" value="4" />
+          <entry key="project.open.time.62" value="6" />
+          <entry key="project.open.time.63" value="5" />
+          <entry key="project.open.time.64" value="5" />
+          <entry key="project.open.time.65" value="4" />
+          <entry key="project.open.time.66" value="4" />
+          <entry key="project.open.time.67" value="2" />
+          <entry key="project.open.time.68" value="2" />
+          <entry key="project.open.time.69" value="7" />
+          <entry key="project.open.time.7" value="4" />
+          <entry key="project.open.time.70" value="2" />
+          <entry key="project.open.time.71" value="4" />
+          <entry key="project.open.time.72" value="1" />
+          <entry key="project.open.time.73" value="4" />
+          <entry key="project.open.time.74" value="1" />
+          <entry key="project.open.time.76" value="1" />
+          <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.79" value="1" />
-          <entry key="project.open.time.82" value="1" />
-          <entry key="project.opened" value="117" />
+          <entry key="project.open.time.80" value="2" />
+          <entry key="project.open.time.82" value="2" />
+          <entry key="project.open.time.83" value="1" />
+          <entry key="project.open.time.86" value="1" />
+          <entry key="project.open.time.87" value="1" />
+          <entry key="project.open.time.92" value="1" />
+          <entry key="project.open.time.93" value="1" />
+          <entry key="project.open.time.96" value="1" />
+          <entry key="project.open.time.98" value="1" />
+          <entry key="project.open.time.99" value="1" />
+          <entry key="project.opened" value="279" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="1ss1574147802" value="1" />
+          <entry key="1ss1574147837" value="1" />
+          <entry key="1ss1574147872" value="1" />
           <entry key="JPG" value="4" />
-          <entry key="css" value="31" />
-          <entry key="env" value="2" />
+          <entry key="PNG" value="2" />
+          <entry key="artisan" value="2" />
+          <entry key="bat" value="1" />
+          <entry key="config" value="2" />
+          <entry key="css" value="69" />
+          <entry key="env" value="6" />
           <entry key="gitignore" value="2" />
-          <entry key="html" value="1" />
-          <entry key="jpg" value="2" />
-          <entry key="js" value="1" />
+          <entry key="html" value="27" />
+          <entry key="jpg" value="7" />
+          <entry key="js" value="47" />
+          <entry key="json" value="6" />
           <entry key="less" value="1" />
-          <entry key="php" value="1033" />
-          <entry key="png" value="4" />
-          <entry key="rnc" value="1" />
+          <entry key="openapi" value="1" />
+          <entry key="php" value="1991" />
+          <entry key="png" value="14" />
+          <entry key="rnc" value="2" />
+          <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="399" />
-          <entry key="CSS" value="31" />
-          <entry key="HTML" value="1" />
-          <entry key="Image" value="10" />
-          <entry key="JavaScript" value="1" />
+          <entry key=".env file" value="3" />
+          <entry key="Blade" value="817" />
+          <entry key="CSS" value="69" />
+          <entry key="HTML" value="27" />
+          <entry key="Image" value="27" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="47" />
           <entry key="Less" value="1" />
-          <entry key="PHP" value="632" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="RNG Compact" value="1" />
+          <entry key="PHP" value="1174" />
+          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="RNG Compact" value="2" />
+          <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="610" />
+          <entry key="css" value="779" />
           <entry key="dummy" value="16" />
           <entry key="env" value="9" />
           <entry key="gitignore" value="13" />
-          <entry key="html" value="57" />
-          <entry key="php" value="62589" />
-          <entry key="txt" value="34" />
+          <entry key="html" value="459" />
+          <entry key="js" value="609" />
+          <entry key="json" value="5" />
+          <entry key="php" value="127983" />
+          <entry key="txt" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="26443" />
-          <entry key="CSS" value="611" />
-          <entry key="HTML" value="60" />
-          <entry key="PHP" value="36142" />
-          <entry key="PLAIN_TEXT" value="72" />
+          <entry key="Blade" value="64043" />
+          <entry key="CSS" value="781" />
+          <entry key="HTML" value="464" />
+          <entry key="JSON" value="5" />
+          <entry key="JavaScript" value="609" />
+          <entry key="PHP" value="63933" />
+          <entry key="PLAIN_TEXT" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
           <entry key="git.branch.checkout.local" value="3" />
-          <entry key="git.branch.merge" value="10" />
+          <entry key="git.branch.merge" value="11" />
+          <entry key="git.branch.rebase" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -203,11 +329,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="300">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1750">
+              <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="39" />
+              <folding>
+                <element signature="e#3062#3151#1#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -216,36 +354,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>noti</find>
-      <find>jo</find>
-      <find>edit</find>
-      <find>beacon_id</find>
-      <find>notifs</find>
-      <find>informa</find>
-      <find>in</find>
-      <find>all</find>
-      <find>all_</find>
-      <find>user_id</find>
-      <find>notif</find>
-      <find>messag</find>
-      <find>view .img</find>
-      <find>.view .</find>
-      <find>message</find>
-      <find>.profile_details</find>
-      <find>beacon</find>
-      <find>na</find>
-      <find>natu</find>
-      <find>natur</find>
-      <find>setbe</find>
-      <find>logi</find>
-      <find>setbea</find>
-      <find>set</find>
-      <find>user</find>
-      <find>setb</find>
-      <find>pro</find>
-      <find>nature</find>
+      <find>Confi</find>
+      <find>ident</find>
+      <find>user'</find>
+      <find>authenticate</find>
+      <find>auth</find>
+      <find>jwt</find>
+      <find>main</find>
+      <find>get_hom</find>
+      <find>followpost</find>
+      <find>store</find>
+      <find>Cus</find>
+      <find>mac</find>
+      <find>verify</find>
+      <find>verif</find>
+      <find>Auth</find>
+      <find>table</find>
+      <find>js-example-basic-multiple</find>
+      <find>dele</find>
+      <find>groups</find>
+      <find>del</find>
+      <find>profile_details</find>
+      <find>de</find>
+      <find>destro</find>
+      <find>alert(</find>
+      <find>phone</find>
+      <find>patter</find>
+      <find>l</find>
       <find>qr</find>
-      <find>profi</find>
+      <find>output1</find>
+      <find>output</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -260,57 +398,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/home/js.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/qrcode.blade.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/resources/views/message_shop.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tables.blade.php" />
-        <option value="$PROJECT_DIR$/app/Notif.php" />
-        <option value="$PROJECT_DIR$/resources/views/editnotif.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/home.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Http/Controllers/Auth/RegisterController.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/auth/register.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/auth/login.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Notif.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/database/migrations/2019_03_06_054850_create_notifs_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_06_054850_create_notifs_table.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/editnotif.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/message_shop.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/build/css/custom.css" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/css/build/css/custom.css" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/css/build/css/custom.min.css" />
-        <option value="$PROJECT_DIR$/app/Beacon.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_01_110258_create_beacons_table.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Beacon.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/database/migrations/2019_03_01_110258_create_beacons_table.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/database/migrations/2019_03_13_074851_create_information_table.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Information.php" />
-        <option value="$PROJECT_DIR$/app/Information.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_13_074851_create_information_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BeaconController.php" />
-        <option value="$PROJECT_DIR$/resources/views/editbeacon.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/information.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/editbeacon.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/setbeacon.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/information.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/qrcode.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/layout/menu.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/index.html" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Http/Controllers/BeaconController.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/profile.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/IotController.php" />
-        <option value="$PROJECT_DIR$/resources/views/profile.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/app/Http/Controllers/IotController.php" />
-        <option value="$PROJECT_DIR$/resources/views/notif.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/notif.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/setbeacon.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/menu.blade.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/routes/web.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/resources/views/tables.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
+        <option value="&lt;9889ed08-ff3a-4e9c-892e-cd4558a17bee&gt;/httpdocs/pacespace/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/UserActive.php" />
+        <option value="$PROJECT_DIR$/resources/views/main_page.blade.php" />
+        <option value="$PROJECT_DIR$/app/Beacon.php" />
+        <option value="$PROJECT_DIR$/resources/views/tables_dynamic.blade.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_09_16_181644_create_iot_records_table.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/iotresource.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyApi.php" />
+        <option value="$PROJECT_DIR$/config/jwt.php" />
+        <option value="$PROJECT_DIR$/config/auth.php" />
+        <option value="$PROJECT_DIR$/vendor/tymon/jwt-auth/src/JWTAuth.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_03_01_105953_create_customers_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/menu.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_16_183234_create_follows_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/CheckHasProfile.php" />
+        <option value="$PROJECT_DIR$/app/Follow.php" />
+        <option value="$PROJECT_DIR$/app/Customer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyToken.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/racestatus.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/message_shop.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/all_shop_messages.blade.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/resources/views/moreinformation.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/build/css/custom.min.css" />
+        <option value="$PROJECT_DIR$/config/session.php" />
+        <option value="$PROJECT_DIR$/resources/views/notif.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/tables.blade.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/all_shop_beacons.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BeaconController.php" />
+        <option value="$PROJECT_DIR$/resources/views/setbeacon.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/qrcode.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IotController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ConsumerV1Controller.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/resources/views/profile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/information.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -319,6 +457,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -351,6 +492,9 @@
       <path value="$PROJECT_DIR$/public/css/vendors/switchery/package.json" />
       <path value="$PROJECT_DIR$/public/css/vendors/transitionize/package.json" />
     </packageJsonPaths>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -392,7 +536,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
@@ -430,6 +573,37 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/astatroth/laravel-timer" />
+      <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
+      <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/simplesoftwareio/simple-qrcode" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/swagger-api/swagger-ui" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/darkaonline/l5-swagger" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -476,20 +650,7 @@
             <path>
               <item name="park" type="b2602c69:ProjectViewProjectNode" />
               <item name="park" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="park" type="b2602c69:ProjectViewProjectNode" />
-              <item name="park" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="park" type="b2602c69:ProjectViewProjectNode" />
-              <item name="park" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -499,7 +660,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="tables&#9;FILE&#9;file://C:/xampp/htdocs/park/resources/views/tables.blade.php" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -508,16 +670,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\park\public\js" />
+      <recent name="C:\xampp\htdocs\park\public\css" />
+      <recent name="C:\xampp\htdocs\park\public_html" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\park\public\css" />
       <recent name="C:\xampp\htdocs\park\resources\views\layout" />
       <recent name="C:\xampp\htdocs\park\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\park\public_html" />
-      <recent name="C:\xampp\htdocs\park\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -658,7 +823,169 @@
       <workItem from="1562492484397" duration="9476000" />
       <workItem from="1562565398737" duration="16890000" />
       <workItem from="1563002338640" duration="8730000" />
-      <workItem from="1563081437892" duration="1659000" />
+      <workItem from="1563081437892" duration="5402000" />
+      <workItem from="1563214592553" duration="92000" />
+      <workItem from="1563282004299" duration="2605000" />
+      <workItem from="1563434804424" duration="47000" />
+      <workItem from="1563438011028" duration="121000" />
+      <workItem from="1563461162483" duration="6012000" />
+      <workItem from="1563520191211" duration="8370000" />
+      <workItem from="1563545506250" duration="4092000" />
+      <workItem from="1563561488132" duration="3532000" />
+      <workItem from="1563716990225" duration="4468000" />
+      <workItem from="1563777201416" duration="9008000" />
+      <workItem from="1563796420940" duration="4842000" />
+      <workItem from="1563859749402" duration="2740000" />
+      <workItem from="1563869994952" duration="3131000" />
+      <workItem from="1563877924083" duration="3209000" />
+      <workItem from="1563883567337" duration="1001000" />
+      <workItem from="1563948594532" duration="9445000" />
+      <workItem from="1563969937628" duration="226000" />
+      <workItem from="1564409468403" duration="1855000" />
+      <workItem from="1565435951622" duration="281000" />
+      <workItem from="1565767676412" duration="550000" />
+      <workItem from="1565796921811" duration="603000" />
+      <workItem from="1565874589302" duration="3354000" />
+      <workItem from="1565935922502" duration="3024000" />
+      <workItem from="1565940863737" duration="1505000" />
+      <workItem from="1565976011866" duration="26000" />
+      <workItem from="1566204114487" duration="3368000" />
+      <workItem from="1566371866763" duration="6000" />
+      <workItem from="1566393854246" duration="1496000" />
+      <workItem from="1566558917447" duration="3480000" />
+      <workItem from="1566627690881" duration="630000" />
+      <workItem from="1566658988056" duration="735000" />
+      <workItem from="1567507314497" duration="16999000" />
+      <workItem from="1567534661719" duration="5565000" />
+      <workItem from="1567568082367" duration="3653000" />
+      <workItem from="1567584214334" duration="19467000" />
+      <workItem from="1567659032505" duration="7391000" />
+      <workItem from="1567667775723" duration="648000" />
+      <workItem from="1567750005568" duration="217000" />
+      <workItem from="1567832899617" duration="846000" />
+      <workItem from="1568440411966" duration="14824000" />
+      <workItem from="1568485240934" duration="3199000" />
+      <workItem from="1568524340112" duration="168000" />
+      <workItem from="1568538422019" duration="11119000" />
+      <workItem from="1568614565965" duration="6731000" />
+      <workItem from="1568639370777" duration="3925000" />
+      <workItem from="1568657747428" duration="374000" />
+      <workItem from="1568695674757" duration="12957000" />
+      <workItem from="1568737251674" duration="599000" />
+      <workItem from="1568788229422" duration="8330000" />
+      <workItem from="1568824080365" duration="594000" />
+      <workItem from="1569217211193" duration="1052000" />
+      <workItem from="1569219759907" duration="772000" />
+      <workItem from="1569224534343" duration="820000" />
+      <workItem from="1569308823680" duration="1976000" />
+      <workItem from="1569323824229" duration="2528000" />
+      <workItem from="1569346441797" duration="2179000" />
+      <workItem from="1569389232868" duration="637000" />
+      <workItem from="1569408242781" duration="11316000" />
+      <workItem from="1569477568601" duration="2718000" />
+      <workItem from="1569502308580" duration="4263000" />
+      <workItem from="1569657566695" duration="11476000" />
+      <workItem from="1569757504639" duration="1019000" />
+      <workItem from="1569781002308" duration="5211000" />
+      <workItem from="1569819021122" duration="10984000" />
+      <workItem from="1569871293180" duration="2083000" />
+      <workItem from="1569905595745" duration="7229000" />
+      <workItem from="1569919653575" duration="1215000" />
+      <workItem from="1569995802238" duration="4427000" />
+      <workItem from="1570095976358" duration="1489000" />
+      <workItem from="1570126866836" duration="1033000" />
+      <workItem from="1570186489806" duration="809000" />
+      <workItem from="1570361262934" duration="1326000" />
+      <workItem from="1570389266501" duration="708000" />
+      <workItem from="1570519674199" duration="891000" />
+      <workItem from="1570548465285" duration="6016000" />
+      <workItem from="1570636469561" duration="13000" />
+      <workItem from="1570641906240" duration="3266000" />
+      <workItem from="1570711495127" duration="1848000" />
+      <workItem from="1570974611974" duration="228000" />
+      <workItem from="1572189358227" duration="200000" />
+      <workItem from="1572201308565" duration="49000" />
+      <workItem from="1572278579767" duration="597000" />
+      <workItem from="1572355631293" duration="4811000" />
+      <workItem from="1572420811983" duration="2231000" />
+      <workItem from="1572505927312" duration="358000" />
+      <workItem from="1572848701818" duration="18379000" />
+      <workItem from="1572873854768" duration="6033000" />
+      <workItem from="1573024421756" duration="21807000" />
+      <workItem from="1573059513168" duration="4935000" />
+      <workItem from="1573101352819" duration="19893000" />
+      <workItem from="1573150131891" duration="3128000" />
+      <workItem from="1573213595526" duration="1274000" />
+      <workItem from="1573273218664" duration="9739000" />
+      <workItem from="1573364786548" duration="3241000" />
+      <workItem from="1573462644457" duration="3796000" />
+      <workItem from="1573533579612" duration="3141000" />
+      <workItem from="1573556516570" duration="2375000" />
+      <workItem from="1573578317078" duration="8458000" />
+      <workItem from="1573617601347" duration="1571000" />
+      <workItem from="1573636752025" duration="6769000" />
+      <workItem from="1573736586861" duration="2775000" />
+      <workItem from="1573745943624" duration="12136000" />
+      <workItem from="1573818740970" duration="5573000" />
+      <workItem from="1574146463685" duration="18666000" />
+      <workItem from="1574274971958" duration="7918000" />
+      <workItem from="1574321893867" duration="6758000" />
+      <workItem from="1574441162326" duration="3340000" />
+      <workItem from="1574447196568" duration="3970000" />
+      <workItem from="1574487757707" duration="5995000" />
+      <workItem from="1574516042233" duration="415000" />
+      <workItem from="1574774002483" duration="3979000" />
+      <workItem from="1574780396078" duration="2134000" />
+      <workItem from="1574863839388" duration="2587000" />
+      <workItem from="1574924877115" duration="4020000" />
+      <workItem from="1574939298677" duration="4100000" />
+      <workItem from="1574957044534" duration="120000" />
+      <workItem from="1574969762778" duration="2794000" />
+      <workItem from="1575435393912" duration="6368000" />
+      <workItem from="1575448559517" duration="10580000" />
+      <workItem from="1575529855949" duration="13000" />
+      <workItem from="1575656454913" duration="3530000" />
+      <workItem from="1575693973471" duration="7256000" />
+      <workItem from="1575870230959" duration="12952000" />
+      <workItem from="1576654891632" duration="13606000" />
+      <workItem from="1576694375287" duration="4192000" />
+      <workItem from="1576739612763" duration="9351000" />
+      <workItem from="1576752577114" duration="855000" />
+      <workItem from="1576866549842" duration="3652000" />
+      <workItem from="1576907652351" duration="7306000" />
+      <workItem from="1576933021519" duration="1143000" />
+      <workItem from="1576948616688" duration="7900000" />
+      <workItem from="1577121356936" duration="1345000" />
+      <workItem from="1577186407868" duration="4249000" />
+      <workItem from="1577209937664" duration="593000" />
+      <workItem from="1577371089384" duration="750000" />
+      <workItem from="1577697299711" duration="2338000" />
+      <workItem from="1577709553023" duration="5628000" />
+      <workItem from="1577873773849" duration="8617000" />
+      <workItem from="1577992363934" duration="2207000" />
+      <workItem from="1578221884141" duration="495000" />
+      <workItem from="1579329423025" duration="289000" />
+      <workItem from="1580559505770" duration="346000" />
+      <workItem from="1580893716356" duration="828000" />
+      <workItem from="1581145790919" duration="13982000" />
+      <workItem from="1581254041762" duration="6409000" />
+      <workItem from="1581340912649" duration="15621000" />
+      <workItem from="1581411515464" duration="1229000" />
+      <workItem from="1581440034478" duration="10068000" />
+      <workItem from="1581483083096" duration="8109000" />
+      <workItem from="1581511357656" duration="4502000" />
+      <workItem from="1581622200324" duration="2814000" />
+      <workItem from="1581748852164" duration="6741000" />
+      <workItem from="1581775175495" duration="103000" />
+      <workItem from="1581955825310" duration="3303000" />
+      <workItem from="1582463437261" duration="807000" />
+      <workItem from="1582484198641" duration="879000" />
+      <workItem from="1582524722798" duration="615000" />
+      <workItem from="1582797076198" duration="3237000" />
+      <workItem from="1582804777472" duration="7796000" />
+      <workItem from="1582880970206" duration="5465000" />
+      <workItem from="1583215372262" duration="2535000" />
+      <workItem from="1583567469530" duration="1771000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1555169469402</created>
@@ -702,16 +1029,32 @@
       <option name="project" value="LOCAL" />
       <updated>1562228979343</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="p2">
+      <created>1563085522110</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563085522110</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="634528000" />
+    <option name="totallyTimeSpent" value="1351703000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49709865" visible="true" weight="0.22818792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49709865" visible="true" weight="0.19865772" />
       <window_info id="Structure" order="1" sideWeight="0.5029014" side_tool="true" weight="0.20268457" />
       <window_info id="Favorites" order="2" sideWeight="0.501938" side_tool="true" weight="0.19731544" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -720,19 +1063,20 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49731544" weight="0.2539007" />
-      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49731544" visible="true" weight="0.25920874" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.14751773" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.49798658" visible="true" weight="0.2751773" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49798658" weight="0.2751773" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50201344" side_tool="true" weight="0.3248227" />
-      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4986577" weight="0.19007093" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4986577" visible="true" weight="0.15602838" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32907802" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="14" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.20402685" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -773,348 +1117,369 @@
     <MESSAGE value="add123" />
     <MESSAGE value="add123456" />
     <MESSAGE value="p1" />
-    <option name="LAST_COMMIT_MESSAGE" value="p1" />
+    <MESSAGE value="p2" />
+    <option name="LAST_COMMIT_MESSAGE" value="p2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/routes/web.php</url>
-          <line>50</line>
+          <line>22</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/routes/web.php</url>
-          <line>51</line>
+          <line>24</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/routes/web.php</url>
-          <line>15</line>
+          <line>19</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-82">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="51" column="71" selection-start-line="51" selection-start-column="71" selection-end-line="51" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_16_052446_create_favorites_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/messages/phptos/1558010191IMG_2391.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/1558010303IMG_2391.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/messages/phptos/1558010316IMG_2391.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Follow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="230">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Iot.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Guard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/StatefulGuard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1190">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/JWTAuth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_01_121820_create_iots_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Beacon_Shop.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_18_093808_create_beacon__shops_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_13_102312_create_shops_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/JWT.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="-2898">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustBeAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="4" column="17762" selection-start-line="4" selection-start-column="17762" selection-end-line="4" selection-end-column="17762" />
+        <state relative-caret-position="-224" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckHasProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/phrase.rnc">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/UserActive.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        <state relative-caret-position="-201" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/racestatus.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_17_155757_create_messages_table.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/main_page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="-1219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/app.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/message_shop.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="7" column="43155" selection-start-line="7" selection-start-column="43155" selection-end-line="7" selection-end-column="43155" />
+        <state relative-caret-position="2829">
+          <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/js.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="40" column="7" selection-start-line="35" selection-start-column="4" selection-end-line="40" selection-end-column="7" />
+        <state relative-caret-position="345">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Shop.php">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="1012">
+          <caret line="235" column="67" selection-start-line="235" selection-start-column="67" selection-end-line="235" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Message.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/moreinformation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Favorite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/race.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Notif.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_06_054850_create_notifs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="322">
+          <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/build/css/custom.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="1888" column="24" selection-start-line="1888" selection-start-column="24" selection-end-line="1888" selection-end-column="24" />
+        <state relative-caret-position="-1175">
+          <caret line="1888" column="31" selection-start-line="1888" selection-start-column="31" selection-end-line="1888" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/build/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/config/session.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="1901" column="11" selection-start-line="1901" selection-start-column="11" selection-end-line="1903" selection-end-column="3" />
+        <state relative-caret-position="1012">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Validation/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layout/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Information.php">
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.validate.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="23">
+          <caret line="3" column="2433" selection-start-line="3" selection-start-column="2433" selection-end-line="3" selection-end-column="2433" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_13_074851_create_information_table.php">
+    <entry file="file://$PROJECT_DIR$/public/js/additional-methods.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="69">
+          <caret line="3" column="11144" selection-start-line="3" selection-start-column="11144" selection-end-line="3" selection-end-column="11144" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_01_110258_create_beacons_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Beacon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/editbeacon.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/editnotif.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="107" column="66" selection-start-line="107" selection-start-column="66" selection-end-line="107" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/information.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/message_shop.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/qrcode.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        <state relative-caret-position="621">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tables.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="81" column="78" selection-start-line="81" selection-start-column="76" selection-end-line="81" selection-end-column="78" />
+        <state relative-caret-position="3013">
+          <caret line="131" column="72" selection-start-line="131" selection-start-column="72" selection-end-line="131" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/setbeacon.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="60" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="1" selection-end-line="287" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsumerV1Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BeaconController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="26" />
+        <state relative-caret-position="2925">
+          <caret line="139" column="31" selection-start-line="139" selection-end-line="140" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="332" column="13" selection-start-line="332" selection-start-column="13" selection-end-line="332" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="850">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IotController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="361" column="20" lean-forward="true" selection-start-line="361" selection-start-column="20" selection-end-line="361" selection-end-column="20" />
+        <state relative-caret-position="461">
+          <caret line="208" column="28" selection-start-line="208" selection-start-column="28" selection-end-line="208" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/qrcode.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/js.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/all_shop_messages.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/all_shop_beacons.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2000">
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/notif.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="77" column="176" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="176" />
+        <state relative-caret-position="281">
+          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="117" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/setbeacon.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/tables_dynamic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4300">
-          <caret line="172" column="10" selection-start-line="172" selection-start-column="10" selection-end-line="172" selection-end-column="10" />
+        <state relative-caret-position="-1305" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1675">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2775">
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        <state relative-caret-position="4025">
+          <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="33" column="3" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="3" />
+        <state relative-caret-position="200">
+          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/menu.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/information.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+        <state relative-caret-position="445">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="53" column="84" selection-start-line="53" selection-start-column="84" selection-end-line="53" selection-end-column="84" />
+        <state relative-caret-position="300">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="1750">
+          <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="39" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#3062#3151#1#PHP" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>

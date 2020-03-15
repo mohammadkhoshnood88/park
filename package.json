@@ -21,5 +21,10 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "jquery-ui": "^1.12.1",
+        "moment": "^2.24.0",
+        "print-js": "^1.0.63"
     }
 }

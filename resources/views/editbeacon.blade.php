@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="fontiran.com:license" content="Y68A9">
-    <title> سیستم مدیریت تبلیغات هوشمند</title>
+    <title>ویرایش بیکن</title>
 
     <!-- Bootstrap -->
     <link href="{{asset('css/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -33,8 +33,9 @@
         <div class="x_panel">
 
 
-            <div class="x_title clearfix">
-                <h3>فرم ویرایش بیکن {{$beacons[0]->name}} </h3>
+            <div class="x_title">
+
+                <div class="clearfix" style="font-size: 12px">مدیریت بیکن ها/ فرم ویرایش بیکن {{$beacons[0]->name}}</div>
             </div>
 
             <div class="x_content">
@@ -146,5 +147,8 @@
         </div>
     </div>
 </div>
-</body>
+<script src="{{asset('css/vendors/jquery/dist/jquery.min.js')}}"></script>
+
 @extends('layout.footer')
+</body>
+</html>

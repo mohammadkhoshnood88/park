@@ -4,24 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Beacon;
 use App\Customer;
+use App\Download;
 use App\Favorite;
 use App\Follow;
+use App\Http\Requests\BeaconBuy;
+use App\Http\Requests\FavoriteValidation;
 use App\Information;
 use App\Iot;
+use App\IotRecord;
 use App\Message;
 use App\Notif;
 use App\Race;
 use App\Shop;
-use Carbon\CarbonTimeZone;
-//use http\Env\Response;
+use App\User;
+
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
+
 //use function MongoDB\BSON\toJSON;
 
 class BeaconController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +38,9 @@ class BeaconController extends Controller
      */
     public function index()
     {
-            return "salam";
+        dd(Gate::denies('is-admin'));
+        dd(Session::getName());
+        return "done!";
     }
 
     /**
@@ -39,17 +50,24 @@ class BeaconController extends Controller
      */
     public function create()
     {
-        $information = Information::where('user_id', Auth::user()->id)->get();
 
-        if (count($information) != 0) {
-            $groups = unserialize($information[0]->groups);
-            $locations = unserialize($information[0]->locations);
-        } else {
+        $user_information = Information::whereUserId(Auth::user()->id)->get();
+//        return ;
+        if (count($user_information) == 0){
             $groups = [];
             $locations = [];
         }
+        else{
+        $groups = unserialize($user_information[0]->groups);
+        $locations = unserialize($user_information[0]->locations);
+        if ($user_information[0]->groups == null) {
+            $groups = [];
+        } else if ($user_information[0]->locations == null) {
+            $locations = [];
+        }
+        }
         $beacons = Beacon::all()->where('user_id', '=', Auth::user()->id);
-        return view('setbeacon', compact('beacons', 'groups', 'locations'));
+        return view('setbeacon', compact('groups', 'locations', 'beacons'));
     }
 
     /**
@@ -60,30 +78,67 @@ class BeaconController extends Controller
      */
     public function store(Request $request)
     {
-//        return Auth::user()->id;
-        $shop = Shop::all()->where('user_id' , '=' , Auth::user()->id)->first();
-        $shop_name = $shop->shop_name;
+//        return $request->beacon_mac;
+        $this->validate($request ,
+            [
+                'name' => 'required|min:3|max:12|unique:beacons',
+                'uuid' => 'required',
+                "beacon_mac" => "required|array|min:6|max:6",
+                "beacon_mac.*"  => "required|string|min:2",
+            ],
+            [
+                'name.min' => 'برای نام حداقل 3 حرف وارد کنید',
+                'name.max' => 'طول نام ورودی بیش از حد مجاز است',
+                'name.unique' => 'این نام قبلا استفاده شده است',
+                'beacon_mac.required' => 'مک آدرس را وارد کنید',
+                'uuid.required' => 'uuid را وارد کنید',
+                'beacon_mac.*.required' => 'مک آدرس وارد شده معتبر نیست',
+                'beacon_mac.*.min' => 'مک آدرس وارد شده معتبر نیست',
+                'beacon_mac.*.max' => 'مک آدرس وارد شده معتبر نیست',
+            ]
+        );
+
+        $beacon_mac = $request->beacon_mac;
+        $beacon_mac = "[" . $beacon_mac[0] . ":" .
+         $beacon_mac[1] . ":" .
+         $beacon_mac[2] . ":" .
+         $beacon_mac[3] . ":" .
+         $beacon_mac[4] . ":" .
+         $beacon_mac[5] . "]";
+
+
+
+        $shop = Shop::all()->where('user_id', '=', Auth::user()->id)->first();
+//        return $shop;
+        $shop_id = $shop->id;
         Beacon::create([
             'uuid' => $request->get('uuid'),
-            'shop_name' => $shop_name,
+            'shop_id' => $shop_id,
             'user_id' => Auth::user()->id,
             'name' => $request->get('name'),
-            'mac_address' => $request->get('beacon_mac'),
+            'mac_address' => $beacon_mac,
             'major' => $request->get('major'),
             'minor' => $request->get('minor'),
             'location' => $request->get('location'),
             'group' => $request->get('group'),
             'tx' => '1'
         ]);
+        IotRecord::create([
+            'beacon_id' => $beacon_mac,
+            'day_date' => Carbon::now(),
+            'record' => "a"
+        ]);
         Notif::create([
-            'beacon_mac' => $request->get('beacon_mac'),
+            'beacon_mac' => $beacon_mac,
             'user_id' => Auth::user()->id,
             'txt' => "تعیین نشده است",
             'pic' => "تعیین نشده است",
             'url' => "تعیین نشده است",
             'vid' => "تعیین نشده است"
         ]);
-        return redirect('/api/beacon/create');
+
+        session()->flash('beacon-message' , 'بیکن جدید اضافه شد');
+        return back();
     }
 
     /**
@@ -131,6 +186,9 @@ class BeaconController extends Controller
 //        $this->authorize('UserPark', $beacon);
         DB::table('beacons')
             ->where(['mac_address' => $beacon])
+            ->update(['name' => $request->get('name')]);
+        DB::table('beacons')
+            ->where(['mac_address' => $beacon])
             ->update(['mac_address' => $request->get('beacon_mac')]);
         DB::table('beacons')
             ->where(['mac_address' => $beacon])
@@ -160,7 +218,7 @@ class BeaconController extends Controller
 //            ->where(['uuid' => $beacon])
 //            ->update(['user_id' => Auth::user()->id]);
 
-        return redirect('/api/beacon/create');
+        return redirect('/beacon/create');
 
     }
 
@@ -175,86 +233,60 @@ class BeaconController extends Controller
 //        $this->authorize('UserPark', $beacon);
 
         Beacon::where('mac_address', $beacon)->delete();
-        Notif::where('beacon_mac' , $beacon)->delete();
-        return redirect('/api/beacon/create');
+        Notif::where('beacon_mac', $beacon)->delete();
+        \Session::flash('beacon-message' , 'حذف بیکن با موفقیت انجام شد');
+
+        return back();
     }
 
-    public function record(Request $request)
+    public function setrace()
     {
-
-        if ($request['uuid'] != "" || $request['customer_mac'] != "") {
-            if ($request['uuid'] != "") {
-                $uuid = $request['uuid'];
-                $spiot = Iot::all()->where('beacon_id', $uuid);
-                $iot = Iot::all();
-                return view('tables', compact('spiot', 'iot'));
-            }
-            if ($request['customer_mac'] != "") {
-                $uuid = $request['customer_mac'];
-                $spiot = Iot::all()->where('customer_id', $uuid);
-                $iot = Iot::all();
-                return view('tables', compact('spiot', 'iot'));
-            }
-        } elseif ($request['prdate'] != "یک گزینه را انتخاب کنید" || $request['todate'] != "" || $request['fromdate'] != "") {
-            if ($request['prdate'] != "یک گزینه را انتخاب کنید") {
-                $uuid = $request['prdate'];
-//                if ($uuid == "ssss") {
-//
-//                }
-
-                $spiot = Iot::all()->where('beacon_id', $uuid);
-                $iot = Iot::paginate(30);
-//                return $uuid;
-                return view('tables', compact('spiot', 'iot'));
-            }
-            if ($request['todate'] != "" && $request['fromdate'] != "") {
-                return Iot::wheredate('created_at', ['$request[\'todate\']', '$request[\'fromdate\']']);
-
-
-            }
-        }
+        $beacons = Beacon::where('user_id' , Auth::user()->id)->get();
+        $favorites = Favorite::all();
+        return view('race' , compact('beacons' , 'favorites'));
     }
 
-    public function showshop()
+    public function racestatus()
     {
-        return view('race');
+        return view('racestatus');
     }
 
     public function setshop(Request $request)
     {
-        $shop = Shop::where('user_id' , Auth::user()->id)->get();
+        $shop = Shop::where('user_id', Auth::user()->id)->get();
 //        return $shop;
-        if (count($shop) == 0){
-        if ($request->file('logo')) {
-            $file = $request->file('logo');
-            $filename = time() . $file->getClientOriginalName();
-            $file->move('logo/phptos', $filename);
-            $logo = "/logo/photos/{$filename}";
-        } else {
-            $logo = "";
-        }
+        if (count($shop) == 0) {
+            if ($request->file('logo')) {
+                $file = $request->file('logo');
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('logo/photos', $filename);
+                $logo = "logo/photos/{$filename}";
+            } else {
+                $logo = "";
+            }
 
-        Shop::create([
-            'name' => $request->get('name'),
-            'shop_name' => $request->get('shop_name'),
-            'user_id' => Auth::user()->id,
-            'logo' => $logo,
-            'address' => $request->get('address'),
-            'type' => $request->get('type'),
-            'tel_num' => $request->get('tel_num'),
+            $shop = new Shop();
+            $shop->name = $request->get('name');
+            $shop->shop_name = $request->get('shop_name');
+            $shop->user_id = Auth::user()->id;
+            $shop->logo = $logo;
+            $shop->tel_num = $request->get('tel_num');
+            $shop->type = $request->get('type');
+            if ($request->get('type') == "admin") {
+                $shop->address = $request->get('address');
+            } else {
+                $shop->plaque = $request->get('plaque');
+                $shop->floor = $request->get('floor');
+            }
+            $shop->save();
 
-        ]);
-        }
-        elseif (count($shop) == 1){
+        } elseif (count($shop) == 1) {
             DB::table('shops')
                 ->where(['user_id' => Auth::user()->id])
                 ->update(['shop_name' => $request->get('shop_name')]);
             DB::table('shops')
                 ->where(['user_id' => Auth::user()->id])
                 ->update(['name' => $request->get('name')]);
-            DB::table('shops')
-                ->where(['user_id' => Auth::user()->id])
-                ->update(['address' => $request->get('address')]);
             DB::table('shops')
                 ->where(['user_id' => Auth::user()->id])
                 ->update(['type' => $request->get('type')]);
@@ -264,10 +296,23 @@ class BeaconController extends Controller
             DB::table('shops')
                 ->where(['user_id' => Auth::user()->id])
                 ->update(['shop_name' => $request->get('shop_name')]);
+            if ($request->get('type') == "admin") {
+                DB::table('shops')
+                    ->where(['user_id' => Auth::user()->id])
+                    ->update(['address' => $request->get('address')]);
+            } else {
+                DB::table('shops')
+                    ->where(['user_id' => Auth::user()->id])
+                    ->update(['plaque' => $request->get('plaque')]);
+                DB::table('shops')
+                    ->where(['user_id' => Auth::user()->id])
+                    ->update(['floor' => $request->get('floor')]);
+            }
+
             if ($request->file('logo')) {
                 $file = $request->file('logo');
                 $filename = time() . $file->getClientOriginalName();
-                $file->move('logo/phptos', $filename);
+                $file->move('logo/photos', $filename);
                 $logo = "/logo/photos/{$filename}";
             } else {
                 $logo = "";
@@ -276,7 +321,11 @@ class BeaconController extends Controller
                 ->where(['user_id' => Auth::user()->id])
                 ->update(['logo' => $logo]);
         }
-        return redirect('/');
+        DB::table('users')
+            ->where(['id' => Auth::user()->id])
+            ->update(['profile' => 1]);
+
+        return redirect('/home');
     }
 
     public function getrace()
@@ -356,8 +405,7 @@ class BeaconController extends Controller
             $customer = Customer::all()->where('mac_address', '=', $request->get('mac_address'))->first();
             $customer->points = $customer->points + $ex_time;
             $customer->save();
-        }
-        elseif ($count->number == 0) {
+        } elseif ($count->number == 0) {
             return response()->json('0', 400);
         }
 //        }
@@ -372,59 +420,63 @@ class BeaconController extends Controller
         $customer->save();
     }
 
-    public function followpost(Request $request)
-    {
-        $customer = Follow::where(['mac_address' => $request->get('mac_address') , 'shop_name' => $request->get('shop_name')])
-            ->get();
-        if (count($customer) == 0) {
+//    public function followpost(Request $request)
+//    {
+////        return $request;
+//        $customer = Follow::where(['mac_address' => $request->get('mac_address'), 'shop_id' => $request->get('shop_id')])
+//            ->get();
+//        if (count($customer) == 0) {
+//
+//            Follow::create([
+//                'mac_address' => $request->get('mac_address'),
+//                'shop_id' => $request->get('shop_id'),
+//                'follow' => $request->get('follow')
+//            ]);
+//
+//            return "aaaaa";
+//        }
+//        return response('following');
+//    }
 
-            Follow::create([
-                'mac_address' => $request->get('mac_address'),
-                'shop_name' => $request->get('shop_name'),
-                'follow' => $request->get('follow')
-            ]);
 
-            return "aaaaa";
-        }
-        return response('following');
-    }
-    /////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-//////////////////////////////////// inja barressi shavad////////////////////////////////
+
     public function get_home_message(Request $request)
     {
 //        return $request;
         $message_follows = DB::table('messages')
-            ->join('follows', 'messages.shop_name', '=', 'follows.shop_name')
-            ->select('messages.*', 'follows.*')
-            ->where(['mac_address' => $request->get('mac_address') , 'type' => 'special'])
+            ->join('follows', 'messages.shop_id', '=', 'follows.shop_id')
+            ->join('shops', 'shops.id', '=', 'follows.shop_id')
+            ->select('messages.*', 'follows.*' , 'shops.shop_name')
+            ->where('mac_address', '=', $request->get('mac_address'))
             ->get();
         return $message_follows;
     }
 
     public function get_message(Request $request)
     {
-        $message_general = Message::where(
-            ['favorite'=> $request->get('favorite'),
-            'type' => 'general'])
+        $messages = Message::where('favorite', $request->get('favorite'))
             ->get();
 
-        return $message_general;
-
+        return $messages;
     }
 
-    public function setfavorite(Request $request)
+    /**
+     * @param FavoriteValidation $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function setfavorite(FavoriteValidation $request)
     {
-//    return $request;
+//        return $request;
         $file = $request->file('favoritefile');
         $filename = time() . $file->getClientOriginalName();
-        $file->move('favorites/phptos', $filename);
+        $file->move('favorites/photos', $filename);
         Favorite::create([
             'favorite' => $request->get('favorite'),
-            'path' => "/favorites/photos/{$filename}"
+            'path' => "favorites/photos/{$filename}"
         ]);
         $favorites = Favorite::all();
-        return view('information', compact('favorites'));
+        $text = "";
+        return back();
     }
 
     public function get_favorite()
@@ -435,36 +487,102 @@ class BeaconController extends Controller
 
     public function message_create(Request $request)
     {
+        $shop = Shop::where('user_id', '=', Auth::user()->id)->first();
+        $shop_id = $shop->id;
         $file = $request->file('file');
         $filename = time() . $file->getClientOriginalName();
-        $file->move('/messages/photos', $filename);
-        $shop_name = Shop::all()->where('user_id', '=', Auth::user()->id);
-//        return $shop_name;
-        Message::create([
-            'content' => $request->get('content'),
-            'favorite' => $request->get('favorite'),
-            'type' => "special",
-            'pic' => "/messages/photos/$filename",
-            'user_id' => Auth::user()->id,
-            'shop_name' => $shop_name[0]->shop_name ?? "فروشگاه"
-        ]);
-        $messages = Message::all()->where('user_id', '=', Auth::user()->id);
-        $favorites = Favorite::all();
-        return view('message_shop', compact('messages' , 'favorites'));
+        $file->move('messages/photos', $filename);
+
+        $message = new Message();
+        $message->content = $request->get('content');
+        $message->favorite = "";
+        $message->pic = "messages/photos/$filename";
+        $message->user_id = Auth::user()->id;
+        $message->shop_id = $shop_id ?? '-1';
+        if ($request->get('offer_set') == 0) {
+            $message->type = "special";
+
+        } elseif ($request->get('offer_set') == 1) {
+            $message->type = 1;
+            $message->offer_percent = $request->get('offer_percent');
+        }
+        $message->save();
+
+//        $messages = Message::all()->where('user_id', '=', Auth::user()->id);
+//        $favorites = Favorite::all();
+        return back();
     }
 
-    /////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-//////////////////////////////////// inja barressi shavad///////////////////////
 
     public function get_home_message_shopmessage(Request $request)
     {
-        $shop_message = Message::all()->where('shopname' , '=' , $request->get('shop_name'));
+        $shop_message = Message::all()->where('shop_id', '=', $request->get('shop_id'));
         return $shop_message;
     }
+
     public function get_home_message_shopmessage_message(Request $request)
     {
-        $shop_message = Message::all()->where('id' , '=' , $request->get('id'));
+        $shop_message = Message::all()->where('id', '=', $request->get('id'));
         return $shop_message;
+    }
+
+    public function all_shop_beacons()
+    {
+        $admin = User::where('isadmin', '=', '1')->first();
+        $shops = Shop::all();
+        $admin_shop = Shop::all()->where('user_id', '=', $admin->id);
+//        return $shops[0]->beacons();
+        $admin_shop = $admin_shop[0]->shop_name;
+        return view('all_shop_beacons', compact('shops', 'admin_shop'));
+    }
+
+    public function beacon_status_change(Request $request)
+    {
+//        return ;
+        $beacon = Beacon::all()->where('mac_address' , '=', $request->get('mac_address'))->first();
+        $status = $beacon->status;
+        if ($status == 1){
+            $new_status = 0;
+        }else{$new_status = 1;}
+        DB::table('beacons')
+            ->where(['mac_address' => $request->get('mac_address')])
+            ->update(['status' => $new_status]);
+        return response()->json(['success' => true, 'mac_address' => $request->get('mac_address') , 'new_status' => $new_status]);
+    }
+
+    public function download_apk()
+    {
+        DB::table('downloads')->
+        where('id' , '=' , 1)->
+        increment('download_apk');
+
+        return response()->download(storage_path('app/PaceSpace.apk'));
+    }
+
+    public function beacon_buy()
+    {
+        return view('buy-beacon');
+    }
+
+    public function beacon_set_price(Request $request)
+    {
+        if ($request->get('number') > 25) {
+            return response()->json(['success' => false, 'message' => 'تعداد بیکن درخواستی بیشتر از حد مجاز است.']);
+        }
+        $price = $request->get('number') * 75000;
+
+        DB::table('downloads')->
+        where('id' , '=' , 1)->
+        increment('beacon_buy');
+
+        return response()->json(['success' => true, 'beacon_price' => '75000', 'price' => $price]);
+    }
+
+    /**
+     * @param BeaconBuy $request
+     */
+    public function customer_buy_beacon(BeaconBuy $request)
+    {
+        return $request;
     }
 }

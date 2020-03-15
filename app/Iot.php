@@ -15,4 +15,5 @@ class Iot extends Model
     'rssi',
     'count'
      ];
+
 }

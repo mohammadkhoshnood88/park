@@ -18,10 +18,12 @@ class CreateShopsTable extends Migration
             $table->integer('user_id');
             $table->string('name');
             $table->string('shop_name');
-            $table->string('logo');
-            $table->string('tel_num');
-            $table->string('type');
-            $table->string('address');
+            $table->string('logo')->nullable();
+            $table->string('tel_num')->nullable();
+            $table->string('type')->nullable();
+            $table->string('address')->default("");
+            $table->string('plaque')->default("");
+            $table->string('floor')->default("");
             $table->timestamps();
         });
 

@@ -1,4 +1,3 @@
-<script src="{{asset('css/vendors/jquery/dist/jquery.min.js')}}"></script>
 
 <script src="{{asset('css/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 

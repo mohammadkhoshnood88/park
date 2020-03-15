@@ -15,12 +15,8 @@ class iotresource extends JsonResource
     public function toArray($request)
     {
         return [
-            'uuid' => $this->uuid,
-            'major' => $this->major,
-            'minor' => $this->minor,
-            'rssi' => $this->rssi,
-            'mac_address' => $this->mac_address,
-
+            'name' => $this->name,
+            'mobile' => $this->mobile,
         ];
     }
 }

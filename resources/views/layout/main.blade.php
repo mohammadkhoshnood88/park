@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="fontiran.com:license" content="Y68A9">
-    <title>PsPace | @yield('title')</title>
+    <title>offera | @yield('title')</title>
+
+    <link rel="icon" href="{{asset('images/logo.jpg')}}" type="image/jpg">
 
 
     <link href="{{asset('css/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -32,6 +34,7 @@
 
 
 <body class="nav-md">
+
 <div class="container body">
     <div class="main_container">
     @include('layout.menu')
@@ -44,7 +47,7 @@
                         <div class="x_panel">
                             <div class="x_title">
 
-                                <div class="clearfix">@yield('subtitle')</div>
+                                <ul class="breadcrumb align-middle" style="font-size: 12px">@yield('subtitle')</ul>
                             </div>
                             <div class="x_content">
                                 <br/>

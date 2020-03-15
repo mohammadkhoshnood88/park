@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Shop;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class LoginController extends Controller
 {
@@ -27,7 +31,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
+    protected $first_redirectTo = '/profile';
 
     /**
      * Create a new controller instance.
@@ -43,17 +48,41 @@ class LoginController extends Controller
     {
         return 'mobile';
     }
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+    }
 
     public function login(Request $request)
     {
+
+        Session::flash('mobile' , $request->mobile);
+        if ($request->get('password') == "") {
+            return back()->with(['error_text' => 'رمز عبور را وارد کنید']);
+        }
+
         $user = User::all()->where('mobile', '=', $request->mobile)->first();
 
         if (!$user) {
-            return "<div style='background: #2176bd;border: 1px solid saddlebrown;margin: 50px; box-shadow: 10px 10px 25px black'><h2 style='text-align: center;'>شما هنوز ثبت نام نکرده اید
-</h2><h5 style='text-align: center;'><a href='/register'>ایجاد حساب</a></h5></div>";
+            return back()->with('error_text', 'شما تا کنون ثبت نام نکرده اید');
         }
         if ($user->isuser == 1) {
             $this->validateLogin($request);
+            $profile = Shop::where('user_id', '=', $user->id)->get();
+
+
+            if (count($profile) == 0) {
+
+                redirect('/profile');
+
+            } else {
+
+                redirect('/home');
+            }
 
 
             // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -68,9 +97,12 @@ class LoginController extends Controller
             if ($this->attemptLogin($request)) {
                 return $this->sendLoginResponse($request);
             }
-        } elseif ($user->isuser == 0 || !$user) {
-            return "<div style='background: #2176bd;border: 1px solid saddlebrown;margin: 10px'><h2 style='text-align: center;'>شما در صف تایید قرار دارید<br/>لطفا منتظر بمانید
-</h2><h5 style='text-align: center;'><a href='/'>بازگشت به فرم ورود</a></h5></div>";
+        } elseif ($user->isuser == 0) {
+            return back()->with('error_text_q', 'شما در صف تایید قرار دارید. لطفا منتظر بمانید');
+
+
+//            return "<div style='background: #f0e68c;border: 1px solid #f1f4f6;margin: 10px'><h2 style='text-align: center;'>شما در صف تایید قرار دارید<br/>لطفا منتظر بمانید
+//</h2><h5 style='text-align: center;'><a href='/login'>بازگشت به فرم ورود</a></h5></div>";
         }
         // If the login attempt was unsuccessful we will increment the number of attempts
         // to login and redirect the user back to the login form. Of course, when this
@@ -86,18 +118,28 @@ class LoginController extends Controller
             return $this->redirectTo();
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
     }
 
-    public function authenticate(Request $request)
-    {
-        $credentials = $request->only('mobile', 'password');
 
-        if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('dashboard');
+    public function redirectTo()
+    {
+        $profile = Shop::where('user_id', '=', Auth::user()->id)->get();
+
+
+        if (count($profile) == 0) {
+
+            return '/profile';
+        } else {
+
+            return '/home';
         }
     }
+
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return back()->with('error_text', 'رمز عبور را اشتباه وارد کرده اید.');
+    }
+
 
 }
 

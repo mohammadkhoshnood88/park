@@ -616,7 +616,7 @@ code, pre {
 
 .profile_info {
     padding: 25px 10px 10px;
-    width: 65%;
+    width: 100%;
     float: right
 }
 
@@ -1886,7 +1886,7 @@ legend {
     height: 280px
 }
 
-.profile_details:nth-child(3n) {
+.profile_details:nth-child(4n+2) {
     clear: both
 }
 
